@@ -10,8 +10,5 @@ import XCTest
 @testable import WindConditionsApp
 
 class WindConditionsAppTests: XCTestCase {
-
-
-
-
+    /* Empty test class for now. Will delete if not required*/
 }

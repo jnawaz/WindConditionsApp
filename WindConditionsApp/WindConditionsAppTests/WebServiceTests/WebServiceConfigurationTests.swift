@@ -7,8 +7,20 @@
 //
 
 import XCTest
+@testable import WindConditionsApp
 
 class WebServiceConfigurationTests: XCTestCase {
+
+    struct ExampleWebServiceConfiguration: WebServiceConfiguration {
+        typealias Response = [String]
+        let query: String
+        let method: HTTPMethod = .post
+        let networkManager: NetworkManager
+        var pathComponents: [String] {
+            return ["test", query]
+        }
+    }
+
     func generateExampleWebServiceConfiguration(query: String = "someQuery") -> (webServiceConfiguration: ExampleWebServiceConfiguration, mock: URLSessionMock) {
         let mock = URLSessionMock()
         let networkManager = NetworkManager(session: mock)
@@ -26,11 +38,7 @@ class WebServiceConfigurationTests: XCTestCase {
                 XCTAssertTrue(urlString.contains($0))
             }
 
-            XCTAssertTrue(request.httpMethod == sut.method.rawValue)
-
-            XCTAssertTrue(headerFields[apiKeyHeader] == apiKey)
-
-            XCTAssertEqual(request.httpBody, sut.requestBody)
+            XCTAssertEqual(request.httpMethod, sut.method.rawValue)
         }
 
         sut.start { _ in }
