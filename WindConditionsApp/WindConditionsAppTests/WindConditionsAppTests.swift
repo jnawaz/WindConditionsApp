@@ -11,7 +11,7 @@ import XCTest
 
 class WindConditionsAppTests: XCTestCase {
 
-    func testsRequestSetupCorrectly() {
 
-    }
+
+
 }

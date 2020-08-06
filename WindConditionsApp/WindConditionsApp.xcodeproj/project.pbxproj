@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		60379C976007C94B1FECAA29 /* WebServiceConfigurationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6037981E27866A998D99EA03 /* WebServiceConfigurationTests.swift */; };
 		8DE4BF1124DC623F001CD608 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE4BF1024DC623F001CD608 /* AppDelegate.swift */; };
 		8DE4BF1324DC623F001CD608 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE4BF1224DC623F001CD608 /* SceneDelegate.swift */; };
 		8DE4BF1524DC623F001CD608 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE4BF1424DC623F001CD608 /* ViewController.swift */; };
@@ -28,6 +29,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		6037981E27866A998D99EA03 /* WebServiceConfigurationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServiceConfigurationTests.swift; sourceTree = "<group>"; };
 		8DE4BF0D24DC623F001CD608 /* WindConditionsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WindConditionsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DE4BF1024DC623F001CD608 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8DE4BF1224DC623F001CD608 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -60,6 +62,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		603799D230D6074E2351770A /* WebServiceTests */ = {
+			isa = PBXGroup;
+			children = (
+				6037981E27866A998D99EA03 /* WebServiceConfigurationTests.swift */,
+			);
+			path = WebServiceTests;
+			sourceTree = "<group>";
+		};
 		8DE4BF0424DC623F001CD608 = {
 			isa = PBXGroup;
 			children = (
@@ -98,6 +108,7 @@
 			children = (
 				8DE4BF2A24DC6242001CD608 /* WindConditionsAppTests.swift */,
 				8DE4BF2C24DC6242001CD608 /* Info.plist */,
+				603799D230D6074E2351770A /* WebServiceTests */,
 			);
 			path = WindConditionsAppTests;
 			sourceTree = "<group>";
@@ -215,6 +226,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DE4BF2B24DC6242001CD608 /* WindConditionsAppTests.swift in Sources */,
+				60379C976007C94B1FECAA29 /* WebServiceConfigurationTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
