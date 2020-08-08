@@ -27,6 +27,7 @@ class WebServiceConfigurationTests: XCTestCase {
         return (ExampleWebServiceConfiguration(query: query, networkManager: networkManager), mock)
     }
 
+    // MARK: - Request
     func testsRequestSetupCorrectly() {
         let (sut, mock) = generateExampleWebServiceConfiguration()
 
@@ -44,4 +45,24 @@ class WebServiceConfigurationTests: XCTestCase {
         sut.start { _ in }
     }
 
+    // MARK: - Errors
+    func testHandlesConnectionError() {}
+
+    func testHandlesCancelledError() {}
+
+    func testHandlesUnknownError() {}
+
+    // MARK: - Invalid responses
+    func testHandlesNoStatusCode() {}
+
+    func testHandlesNoData() {}
+
+    func testHandlesDecodeError() {}
+
+    // MARK: - 400 Errors
+    func testHandles400StatusCode() {}
+
+    func testHandles401StatusCode() {}
+
+    func testHandles403StatusCode() {}
 }
