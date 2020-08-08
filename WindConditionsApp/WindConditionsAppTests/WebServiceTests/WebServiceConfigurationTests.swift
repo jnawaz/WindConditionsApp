@@ -46,7 +46,20 @@ class WebServiceConfigurationTests: XCTestCase {
     }
 
     // MARK: - Errors
-    func testHandlesConnectionError() {}
+    func testHandlesConnectionError() {
+        let (sut, mock) = generateExampleWebServiceConfiguration()
+        mock.error = NSError(domain: "", code: NSURLErrorNotConnectedToInternet, userInfo: nil)
+
+        sut.start { responseType in
+            switch responseType {
+            case .success:
+                XCTFail("This should not be a success")
+            case .failure(let error as WebServiceError):
+                XCTAssertEqual(error, .noInternetError)
+            case .failure(_):
+                XCTFail("This should have failed as a no internet error")
+            }
+    }
 
     func testHandlesCancelledError() {}
 
