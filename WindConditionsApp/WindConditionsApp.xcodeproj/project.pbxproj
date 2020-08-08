@@ -12,7 +12,9 @@
 		603793CE4B9851E7BD6EBCBF /* CityTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603793A52F9B36EABCBDE08B /* CityTests.swift */; };
 		60379487030B0414F686E603 /* WebServiceErrors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603799BD7C9B96CF8A884AE9 /* WebServiceErrors.swift */; };
 		6037948CECB5B36D6F9EB595 /* URLSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603793DBACF3B0736058F5D2 /* URLSessionMock.swift */; };
+		603795F3C8ABAA25706D9DE0 /* FileHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6037953F6A24A84DC9802642 /* FileHelper.swift */; };
 		60379687D6613684862FEBBC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6037913764042762804BD1D7 /* Constants.swift */; };
+		603799F54C5849D010804C1D /* CityListDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6037995A8BFBE7404A51AD0F /* CityListDecoder.swift */; };
 		60379BEAB9F4A06EE72B1DB0 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6037993CCA8F7BFBDA72AB2A /* NetworkManager.swift */; };
 		60379C976007C94B1FECAA29 /* WebServiceConfigurationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6037981E27866A998D99EA03 /* WebServiceConfigurationTests.swift */; };
 		8DCEF97424DF024400F2065D /* citylist.json in Resources */ = {isa = PBXBuildFile; fileRef = 8DCEF97324DF024400F2065D /* citylist.json */; };
@@ -48,8 +50,10 @@
 		6037913764042762804BD1D7 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		603793A52F9B36EABCBDE08B /* CityTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityTests.swift; sourceTree = "<group>"; };
 		603793DBACF3B0736058F5D2 /* URLSessionMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionMock.swift; sourceTree = "<group>"; };
+		6037953F6A24A84DC9802642 /* FileHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileHelper.swift; sourceTree = "<group>"; };
 		6037981E27866A998D99EA03 /* WebServiceConfigurationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServiceConfigurationTests.swift; sourceTree = "<group>"; };
 		6037993CCA8F7BFBDA72AB2A /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		6037995A8BFBE7404A51AD0F /* CityListDecoder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityListDecoder.swift; sourceTree = "<group>"; };
 		603799BD7C9B96CF8A884AE9 /* WebServiceErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServiceErrors.swift; sourceTree = "<group>"; };
 		60379A436F01581B9FEDC684 /* WebServiceConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServiceConfiguration.swift; sourceTree = "<group>"; };
 		60379EFA945577703AB3B073 /* CoreDataTestStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataTestStack.swift; sourceTree = "<group>"; };
@@ -103,6 +107,15 @@
 			path = CoreData;
 			sourceTree = "<group>";
 		};
+		603798776DC2476388D2B93E /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				6037953F6A24A84DC9802642 /* FileHelper.swift */,
+				60379DEDE50A0A039FF93121 /* Decoder */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
 		603799D230D6074E2351770A /* WebServiceTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -137,6 +150,14 @@
 				8DCEF97324DF024400F2065D /* citylist.json */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		60379DEDE50A0A039FF93121 /* Decoder */ = {
+			isa = PBXGroup;
+			children = (
+				6037995A8BFBE7404A51AD0F /* CityListDecoder.swift */,
+			);
+			path = Decoder;
 			sourceTree = "<group>";
 		};
 		8DCEF98524DF0A4300F2065D /* CoreData */ = {
@@ -195,6 +216,7 @@
 				60379A5C32E32201C5AE4297 /* WebServices */,
 				6037913764042762804BD1D7 /* Constants.swift */,
 				60379B3F0D009C392B5A1B1E /* Resources */,
+				603798776DC2476388D2B93E /* Utilities */,
 			);
 			path = WindConditionsApp;
 			sourceTree = "<group>";
@@ -327,6 +349,8 @@
 				60379687D6613684862FEBBC /* Constants.swift in Sources */,
 				8DCEF9B024DF0EFE00F2065D /* Coordinates+CoreDataProperties.swift in Sources */,
 				8DCEF9B124DF0EFE00F2065D /* City+CoreDataClass.swift in Sources */,
+				603795F3C8ABAA25706D9DE0 /* FileHelper.swift in Sources */,
+				603799F54C5849D010804C1D /* CityListDecoder.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
