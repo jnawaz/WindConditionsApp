@@ -13,6 +13,7 @@
 		60379687D6613684862FEBBC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6037913764042762804BD1D7 /* Constants.swift */; };
 		60379BEAB9F4A06EE72B1DB0 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6037993CCA8F7BFBDA72AB2A /* NetworkManager.swift */; };
 		60379C976007C94B1FECAA29 /* WebServiceConfigurationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6037981E27866A998D99EA03 /* WebServiceConfigurationTests.swift */; };
+		8DCEF97424DF024400F2065D /* citylist.json in Resources */ = {isa = PBXBuildFile; fileRef = 8DCEF97324DF024400F2065D /* citylist.json */; };
 		8DE4BF1124DC623F001CD608 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE4BF1024DC623F001CD608 /* AppDelegate.swift */; };
 		8DE4BF1324DC623F001CD608 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE4BF1224DC623F001CD608 /* SceneDelegate.swift */; };
 		8DE4BF1524DC623F001CD608 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE4BF1424DC623F001CD608 /* ViewController.swift */; };
@@ -40,6 +41,7 @@
 		6037993CCA8F7BFBDA72AB2A /* NetworkManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 		603799BD7C9B96CF8A884AE9 /* WebServiceErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServiceErrors.swift; sourceTree = "<group>"; };
 		60379A436F01581B9FEDC684 /* WebServiceConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServiceConfiguration.swift; sourceTree = "<group>"; };
+		8DCEF97324DF024400F2065D /* citylist.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = citylist.json; sourceTree = "<group>"; };
 		8DE4BF0D24DC623F001CD608 /* WindConditionsApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WindConditionsApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DE4BF1024DC623F001CD608 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		8DE4BF1224DC623F001CD608 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -99,6 +101,14 @@
 			path = Mocks;
 			sourceTree = "<group>";
 		};
+		60379B3F0D009C392B5A1B1E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				8DCEF97324DF024400F2065D /* citylist.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
 		8DE4BF0424DC623F001CD608 = {
 			isa = PBXGroup;
 			children = (
@@ -130,6 +140,7 @@
 				8DE4BF1924DC623F001CD608 /* WindConditionsApp.xcdatamodeld */,
 				60379A5C32E32201C5AE4297 /* WebServices */,
 				6037913764042762804BD1D7 /* Constants.swift */,
+				60379B3F0D009C392B5A1B1E /* Resources */,
 			);
 			path = WindConditionsApp;
 			sourceTree = "<group>";
@@ -227,6 +238,7 @@
 			files = (
 				8DE4BF2024DC6242001CD608 /* LaunchScreen.storyboard in Resources */,
 				8DE4BF1D24DC6242001CD608 /* Assets.xcassets in Resources */,
+				8DCEF97424DF024400F2065D /* citylist.json in Resources */,
 				8DE4BF1824DC623F001CD608 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

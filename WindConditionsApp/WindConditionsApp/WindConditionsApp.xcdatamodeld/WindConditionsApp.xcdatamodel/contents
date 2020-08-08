@@ -1,4 +1,25 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="1" systemVersion="11A491" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="false" userDefinedModelVersionIdentifier="">
-    <elements/>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="16119" systemVersion="19E287" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="AbstractCity" representedClassName="AbstractCity" isAbstract="YES" syncable="YES" codeGenerationType="class">
+        <attribute name="country" optional="YES" attributeType="String"/>
+        <attribute name="id" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="state" optional="YES" attributeType="String"/>
+        <relationship name="coordinates" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Coordinates" inverseName="cities" inverseEntity="Coordinates"/>
+    </entity>
+    <entity name="City" representedClassName="City" parentEntity="AbstractCity" syncable="YES" codeGenerationType="class"/>
+    <entity name="Coordinates" representedClassName="Coordinates" syncable="YES" codeGenerationType="class">
+        <attribute name="latitude" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="longitude" optional="YES" attributeType="Float" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <relationship name="cities" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="AbstractCity" inverseName="coordinates" inverseEntity="AbstractCity"/>
+    </entity>
+    <entity name="FavouriteCities" representedClassName="FavouriteCities" parentEntity="AbstractCity" syncable="YES" codeGenerationType="class">
+        <attribute name="isFavourite" optional="YES" attributeType="Boolean" usesScalarValueType="YES"/>
+    </entity>
+    <elements>
+        <element name="AbstractCity" positionX="-148.1484375" positionY="-230.80078125" width="128" height="118"/>
+        <element name="Coordinates" positionX="-161.1015625" positionY="41.41796875" width="128" height="88"/>
+        <element name="FavouriteCities" positionX="158.8515625" positionY="-69.5078125" width="128" height="58"/>
+        <element name="City" positionX="18" positionY="-36" width="128" height="43"/>
+    </elements>
 </model>
