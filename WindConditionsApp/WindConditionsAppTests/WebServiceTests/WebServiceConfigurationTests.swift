@@ -106,14 +106,33 @@ class WebServiceConfigurationTests: XCTestCase {
             case .success:
                 XCTFail(self.failureExpectation)
             case .failure(let error as WebServiceError):
-                XCTAssertTrue(error == .invalidResponse(debugDescription: "Failed to parse HTTP status code"))
+                XCTAssertEqual(error, .invalidResponse(debugDescription: "Failed to parse HTTP status code"))
             case .failure:
                 XCTFail(self.expectedFailureForOtherReason)
             }
         }
     }
 
-    func testHandlesDecodeError() {}
+    func testHandlesNoData() {
+        let (sut, mock) = generateExampleWebServiceConfiguration()
+
+        let response = HTTPURLResponse(url: sut.baseUrl, statusCode: 200, httpVersion: nil, headerFields: nil)
+        mock.response = response
+
+        sut.start { response in
+            switch response {
+            case .success:
+                XCTFail(self.failureExpectation)
+            case .failure(let error as WebServiceError):
+                XCTAssertEqual(error, .invalidResponse(debugDescription: "Response data was nil"))
+            case .failure:
+                XCTFail(self.expectedFailureForOtherReason)
+            }
+        }
+    }
+
+    func testHandlesDecodeError() {
+    }
 
     // MARK: - 400 Errors
     func testHandles400StatusCode() {}
