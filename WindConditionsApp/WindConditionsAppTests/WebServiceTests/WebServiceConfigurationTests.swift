@@ -180,11 +180,65 @@ class WebServiceConfigurationTests: XCTestCase {
 
     // MARK: - 400 Errors
     func testHandles400StatusCode() {
+        let (sut, mock) = generateExampleWebServiceConfiguration()
+
+        let response = HTTPURLResponse(url: sut.baseUrl, statusCode: 400, httpVersion: nil, headerFields: nil)
+        mock.response = response
+
+        sut.start { response in
+            switch response {
+            case .success:
+                XCTFail(self.failureExpectation)
+            case .failure(let error as WebServiceError):
+                XCTAssertEqual(error, .badRequest)
+                self.testExpectation.fulfill()
+            case .failure:
+                XCTFail(self.expectedFailureForOtherReason)
+            }
+        }
+
+        wait(for: [self.testExpectation], timeout: self.testTimeout)
     }
 
     func testHandles401StatusCode() {
+        let (sut, mock) = generateExampleWebServiceConfiguration()
+
+        let response = HTTPURLResponse(url: sut.baseUrl, statusCode: 401, httpVersion: nil, headerFields: nil)
+        mock.response = response
+
+        sut.start { response in
+            switch response {
+            case .success:
+                XCTFail(self.failureExpectation)
+            case .failure(let error as WebServiceError):
+                XCTAssertEqual(error, .unauthorisedError)
+                self.testExpectation.fulfill()
+            case .failure:
+                XCTFail(self.expectedFailureForOtherReason)
+            }
+        }
+
+        wait(for: [self.testExpectation], timeout: self.testTimeout)
     }
 
     func testHandles403StatusCode() {
+        let (sut, mock) = generateExampleWebServiceConfiguration()
+
+        let response = HTTPURLResponse(url: sut.baseUrl, statusCode: 403, httpVersion: nil, headerFields: nil)
+        mock.response = response
+
+        sut.start { response in
+            switch response {
+            case .success:
+                XCTFail(self.failureExpectation)
+            case .failure(let error as WebServiceError):
+                XCTAssertEqual(error, .forbidden)
+                self.testExpectation.fulfill()
+            case .failure:
+                XCTFail(self.expectedFailureForOtherReason)
+            }
+        }
+
+        wait(for: [self.testExpectation], timeout: self.testTimeout)
     }
 }
