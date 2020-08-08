@@ -15,7 +15,7 @@ class CoreDataTestStack {
     }
 
     init() {
-        persistentContainer = NSPersistentContainer(name: "Model")
+        persistentContainer = NSPersistentContainer(name: "WindConditionsApp")
         let description = persistentContainer.persistentStoreDescriptions.first
         description?.type = NSInMemoryStoreType
 
