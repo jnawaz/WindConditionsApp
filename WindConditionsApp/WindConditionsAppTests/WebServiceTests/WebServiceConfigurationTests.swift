@@ -11,6 +11,9 @@ import XCTest
 
 class WebServiceConfigurationTests: XCTestCase {
 
+    private let failureExpectation = "This should have failed to be a success"
+    private let expectedFailureForOtherReason = "This should have failed for a different reason"
+
     struct ExampleWebServiceConfiguration: WebServiceConfiguration {
         typealias Response = [String]
         let query: String
@@ -50,25 +53,65 @@ class WebServiceConfigurationTests: XCTestCase {
         let (sut, mock) = generateExampleWebServiceConfiguration()
         mock.error = NSError(domain: "", code: NSURLErrorNotConnectedToInternet, userInfo: nil)
 
+        sut.start { response in
+            switch response {
+            case .success:
+                XCTFail(self.failureExpectation)
+            case .failure(let error as WebServiceError):
+                XCTAssertEqual(error, .noInternetError)
+            case .failure:
+                XCTFail(self.expectedFailureForOtherReason)
+            }
+        }
+    }
+
+    func testHandlesCancelledError() {
+        let (sut, mock) = generateExampleWebServiceConfiguration()
+        mock.error = NSError(domain: "", code: NSURLErrorCancelled, userInfo: nil)
+
+        sut.start { response in
+            switch response {
+            case .success:
+                XCTFail(self.failureExpectation)
+            case .failure(let error as WebServiceError):
+                XCTAssertEqual(error, .cancelled)
+            case .failure:
+                XCTFail(self.expectedFailureForOtherReason)
+            }
+        }
+    }
+
+    func testHandlesUnknownError() {
+        let (sut, mock) = generateExampleWebServiceConfiguration()
+        mock.error = NSError(domain: "", code: NSURLErrorUnknown, userInfo: nil)
+
+        sut.start { response in
+            switch response {
+            case .success:
+                XCTFail(self.failureExpectation)
+            case .failure(let error as WebServiceError):
+                XCTAssertEqual(error, .networkingError)
+            case .failure:
+                XCTFail(self.expectedFailureForOtherReason)
+            }
+        }
+    }
+
+    // MARK: - Invalid responses
+    func testHandlesNoStatusCode() {
+        let (sut, _) = generateExampleWebServiceConfiguration()
+
         sut.start { responseType in
             switch responseType {
             case .success:
-                XCTFail("This should not be a success")
+                XCTFail(self.failureExpectation)
             case .failure(let error as WebServiceError):
-                XCTAssertEqual(error, .noInternetError)
-            case .failure(_):
-                XCTFail("This should have failed as a no internet error")
+                XCTAssertTrue(error == .invalidResponse(debugDescription: "Failed to parse HTTP status code"))
+            case .failure:
+                XCTFail(self.expectedFailureForOtherReason)
             }
+        }
     }
-
-    func testHandlesCancelledError() {}
-
-    func testHandlesUnknownError() {}
-
-    // MARK: - Invalid responses
-    func testHandlesNoStatusCode() {}
-
-    func testHandlesNoData() {}
 
     func testHandlesDecodeError() {}
 
