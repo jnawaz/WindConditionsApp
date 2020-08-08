@@ -50,7 +50,8 @@ class WebServiceConfigurationTests: XCTestCase {
             XCTAssertEqual(request.httpMethod, sut.method.rawValue)
         }
 
-        sut.start { _ in }
+        sut.start { _ in
+        }
     }
 
     // MARK: - Errors
