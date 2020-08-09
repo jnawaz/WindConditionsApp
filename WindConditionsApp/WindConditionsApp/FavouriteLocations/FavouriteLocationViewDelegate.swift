@@ -9,5 +9,6 @@
 import UIKit
 
 protocol FavouriteLocationViewDelegate: class {
-    /* Temporarily empty */
+    func showEmptyFavouritesView()
+    func hideEmptyFavouritesView()
 }

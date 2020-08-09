@@ -9,11 +9,20 @@
 import UIKit
 
 class FavouriteLocationViewController: UIViewController, FavouriteLocationViewDelegate {
-
     var presenter: FavouriteLocationPresenter?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        presenter = FavouriteLocationPresenter(viewDelegate: self)
+        presenter = FavouriteLocationPresenter(viewDelegate: self, managedObjectContext: CoreDataStack().mainContext)
+    }
+
+    //MARK: - View Delegate Methods
+
+    func showEmptyFavouritesView() {
+        //TODO: Implement method
+    }
+
+    func hideEmptyFavouritesView() {
+        //TODO: Implement method
     }
 }

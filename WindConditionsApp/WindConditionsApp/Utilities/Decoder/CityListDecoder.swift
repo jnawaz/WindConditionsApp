@@ -22,17 +22,18 @@ struct CoordinatesStruct: Decodable {
 }
 
 class CityListDecoder {
-    func decode() {
+    func getCityData() -> [CityStruct]? {
         let cityListData = FileHelper().data(from: fileName, type: fileType)
 
         let decoder = JSONDecoder()
         if let cityData = cityListData {
             do {
                 let cities = try decoder.decode([CityStruct].self, from: cityData)
-                print("save them now")
+                return cities
             } catch {
                 fatalError("Failed to decode City list data")
             }
         }
+        return nil
     }
 }
