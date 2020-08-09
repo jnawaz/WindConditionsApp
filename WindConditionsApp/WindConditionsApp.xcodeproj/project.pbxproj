@@ -14,6 +14,7 @@
 		6037948CECB5B36D6F9EB595 /* URLSessionMock.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603793DBACF3B0736058F5D2 /* URLSessionMock.swift */; };
 		603795F3C8ABAA25706D9DE0 /* FileHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6037953F6A24A84DC9802642 /* FileHelper.swift */; };
 		60379687D6613684862FEBBC /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6037913764042762804BD1D7 /* Constants.swift */; };
+		60379753432DABB01B486CE2 /* NSManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60379FEB88082BE45FA642C7 /* NSManagedObject.swift */; };
 		603799F54C5849D010804C1D /* CityListDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6037995A8BFBE7404A51AD0F /* CityListDecoder.swift */; };
 		60379BEAB9F4A06EE72B1DB0 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6037993CCA8F7BFBDA72AB2A /* NetworkManager.swift */; };
 		60379C976007C94B1FECAA29 /* WebServiceConfigurationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6037981E27866A998D99EA03 /* WebServiceConfigurationTests.swift */; };
@@ -57,6 +58,7 @@
 		603799BD7C9B96CF8A884AE9 /* WebServiceErrors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServiceErrors.swift; sourceTree = "<group>"; };
 		60379A436F01581B9FEDC684 /* WebServiceConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServiceConfiguration.swift; sourceTree = "<group>"; };
 		60379EFA945577703AB3B073 /* CoreDataTestStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataTestStack.swift; sourceTree = "<group>"; };
+		60379FEB88082BE45FA642C7 /* NSManagedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSManagedObject.swift; sourceTree = "<group>"; };
 		8DCEF97324DF024400F2065D /* citylist.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = citylist.json; sourceTree = "<group>"; };
 		8DCEF9A724DF0EFE00F2065D /* Coordinates+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Coordinates+CoreDataClass.swift"; sourceTree = "<group>"; };
 		8DCEF9A824DF0EFE00F2065D /* Coordinates+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Coordinates+CoreDataProperties.swift"; sourceTree = "<group>"; };
@@ -103,8 +105,17 @@
 			children = (
 				60379EFA945577703AB3B073 /* CoreDataTestStack.swift */,
 				603793A52F9B36EABCBDE08B /* CityTests.swift */,
+				603796595EF2FCFCBF130AF1 /* Extensions */,
 			);
 			path = CoreData;
+			sourceTree = "<group>";
+		};
+		603796595EF2FCFCBF130AF1 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				60379FEB88082BE45FA642C7 /* NSManagedObject.swift */,
+			);
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		603798776DC2476388D2B93E /* Utilities */ = {
@@ -363,6 +374,7 @@
 				6037948CECB5B36D6F9EB595 /* URLSessionMock.swift in Sources */,
 				60379338B8B6EDB6CFC14046 /* CoreDataTestStack.swift in Sources */,
 				603793CE4B9851E7BD6EBCBF /* CityTests.swift in Sources */,
+				60379753432DABB01B486CE2 /* NSManagedObject.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
