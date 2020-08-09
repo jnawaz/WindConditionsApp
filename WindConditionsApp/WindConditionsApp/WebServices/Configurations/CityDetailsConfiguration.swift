@@ -7,7 +7,7 @@ import Foundation
 
 struct CityDetailsConfiguration: WebServiceConfiguration {
     typealias Response = CityDetailsResponse
-
+    var networkManager: NetworkManager = NetworkManager()
     var lat: String?
     var lon: String?
     var exclude: String?
@@ -31,17 +31,16 @@ struct CityDetailsConfiguration: WebServiceConfiguration {
 
 }
 
-struct CityDetailsResponse {
+struct CityDetailsResponse: Decodable {
     let lat: Float?
     let lon: Float?
     let timezone: String?
     let timezone_offset: String?
     let current: Forecast?
     let daily: [DailyBreakdown]?
-
 }
 
-struct Forecast {
+struct Forecast: Decodable {
     let dt: Int?
     let sunrise: Int?
     let sunset: Int?
@@ -58,14 +57,14 @@ struct Forecast {
     let weather: Weather?
 }
 
-struct Weather {
+struct Weather: Decodable {
     let id: Int?
     let main: String?
     let description: String?
     let icon: String?
 }
 
-struct DailyBreakdown {
+struct DailyBreakdown: Decodable {
     let dt: Int?
     let sunrise: Int?
     let sunset: Int?
@@ -82,7 +81,7 @@ struct DailyBreakdown {
     let uvi: Float?
 }
 
-struct DailyTemperatures {
+struct DailyTemperatures: Decodable {
     let day: Float?
     let min: Float?
     let max: Float?
@@ -91,14 +90,14 @@ struct DailyTemperatures {
     let morn: Float?
 }
 
-struct FeelsLike {
+struct FeelsLike: Decodable {
     let day: Float?
     let night: Float?
     let eve: Float?
     let morn: Float?
 }
 
-struct WeatherDescription {
+struct WeatherDescription: Decodable {
     let id: Int?
     let main: String?
     let description: String?
