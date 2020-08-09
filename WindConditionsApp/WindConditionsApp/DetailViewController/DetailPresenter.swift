@@ -4,3 +4,16 @@
 //
 
 import Foundation
+import CoreData
+
+class DetailPresenter: NSObject {
+    weak var viewDelegate: DetailViewDelegate?
+    var managedObjectContext: NSManagedObjectContext?
+    
+    init(viewDelegate: DetailViewDelegate,
+         managedObjectContext: NSManagedObjectContext) {
+        super.init()
+        self.viewDelegate = viewDelegate
+        self.managedObjectContext = managedObjectContext
+    }
+}

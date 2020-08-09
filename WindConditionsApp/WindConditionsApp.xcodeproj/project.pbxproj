@@ -33,10 +33,12 @@
 		603798FE076CE79D2A1840FE /* Montserrat-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 60379A668576DAE11B2B7EE0 /* Montserrat-SemiBold.ttf */; };
 		6037999779074C39C12577F1 /* Montserrat-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 603797612880532AE72D2759 /* Montserrat-Regular.ttf */; };
 		603799F54C5849D010804C1D /* CityListDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6037995A8BFBE7404A51AD0F /* CityListDecoder.swift */; };
+		60379A4D5E957546B436A897 /* DetailPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60379EB0D821F93A8532FCE5 /* DetailPresenterTests.swift */; };
 		60379A744FAFDE6A020B07BE /* Montserrat-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6037914373907D9C4470F167 /* Montserrat-Italic.ttf */; };
 		60379BEAB9F4A06EE72B1DB0 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6037993CCA8F7BFBDA72AB2A /* NetworkManager.swift */; };
 		60379C66592AB2B4260B6827 /* DetailViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6037907129331ECCDA35FDC9 /* DetailViewDelegate.swift */; };
 		60379C976007C94B1FECAA29 /* WebServiceConfigurationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6037981E27866A998D99EA03 /* WebServiceConfigurationTests.swift */; };
+		60379D0784ACEDF6DB841078 /* DetailViewDelegateSpy.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603792CC0D0137E3694F7F80 /* DetailViewDelegateSpy.swift */; };
 		60379D7A7A1E9003EA7FDF9B /* FavouriteLocationPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60379D3E87DD0DF84588B185 /* FavouriteLocationPresenterTests.swift */; };
 		60379DEBDCE568043E39C4F8 /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 603795ECECFFA6BD8C47E5E0 /* Montserrat-Medium.ttf */; };
 		8DCEF97424DF024400F2065D /* citylist.json in Resources */ = {isa = PBXBuildFile; fileRef = 8DCEF97324DF024400F2065D /* citylist.json */; };
@@ -80,6 +82,7 @@
 		6037914373907D9C4470F167 /* Montserrat-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file.ttf; path = "Montserrat-Italic.ttf"; sourceTree = "<group>"; };
 		6037921653697C11A7696F25 /* FavouriteLocationViewDelegateSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouriteLocationViewDelegateSpy.swift; sourceTree = "<group>"; };
 		60379272799AF35996D2ABFE /* ViewController+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+Utils.swift"; sourceTree = "<group>"; };
+		603792CC0D0137E3694F7F80 /* DetailViewDelegateSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewDelegateSpy.swift; sourceTree = "<group>"; };
 		603792EE5223DA16EEBE242C /* FavouriteLocationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouriteLocationPresenter.swift; sourceTree = "<group>"; };
 		6037930C62684586C325F254 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
 		6037932A9126A8BC64307A7E /* DetailPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
@@ -103,6 +106,7 @@
 		60379AA3610AB06F0820D98E /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
 		60379AEAC25D42F71AC0B579 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		60379D3E87DD0DF84588B185 /* FavouriteLocationPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouriteLocationPresenterTests.swift; sourceTree = "<group>"; };
+		60379EB0D821F93A8532FCE5 /* DetailPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailPresenterTests.swift; sourceTree = "<group>"; };
 		60379EFA945577703AB3B073 /* CoreDataTestStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataTestStack.swift; sourceTree = "<group>"; };
 		60379FEB88082BE45FA642C7 /* NSManagedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSManagedObject.swift; sourceTree = "<group>"; };
 		8DCEF97324DF024400F2065D /* citylist.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = citylist.json; sourceTree = "<group>"; };
@@ -178,6 +182,7 @@
 			isa = PBXGroup;
 			children = (
 				60379513392532C031F5F879 /* FavouriteLocationTests */,
+				60379DE4B004A62ACBBB6997 /* DetailPresenterTests */,
 			);
 			path = PresenterTests;
 			sourceTree = "<group>";
@@ -291,6 +296,15 @@
 				60379B14F86A2CDAB776EC45 /* Fonts */,
 			);
 			path = Resources;
+			sourceTree = "<group>";
+		};
+		60379DE4B004A62ACBBB6997 /* DetailPresenterTests */ = {
+			isa = PBXGroup;
+			children = (
+				60379EB0D821F93A8532FCE5 /* DetailPresenterTests.swift */,
+				603792CC0D0137E3694F7F80 /* DetailViewDelegateSpy.swift */,
+			);
+			path = DetailPresenterTests;
 			sourceTree = "<group>";
 		};
 		60379DEDE50A0A039FF93121 /* Decoder */ = {
@@ -597,6 +611,8 @@
 				603793CE4B9851E7BD6EBCBF /* CityTests.swift in Sources */,
 				60379753432DABB01B486CE2 /* NSManagedObject.swift in Sources */,
 				60379D7A7A1E9003EA7FDF9B /* FavouriteLocationPresenterTests.swift in Sources */,
+				60379A4D5E957546B436A897 /* DetailPresenterTests.swift in Sources */,
+				60379D0784ACEDF6DB841078 /* DetailViewDelegateSpy.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

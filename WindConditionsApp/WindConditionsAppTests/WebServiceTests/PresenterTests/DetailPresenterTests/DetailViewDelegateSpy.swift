@@ -5,6 +5,6 @@
 
 import Foundation
 
-protocol DetailViewDelegate: class {
-    /* Temporarily empty */
+class DetailViewDelegateSpy: DetailViewDelegate {
+
 }
