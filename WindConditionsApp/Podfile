@@ -6,7 +6,6 @@ target 'WindConditionsApp' do
   use_frameworks!
 
   # Pods for WindConditionsApp
-  pod 'SVProgressHUD', '~> 2.2'
 
   target 'WindConditionsAppTests' do
     inherit! :search_paths

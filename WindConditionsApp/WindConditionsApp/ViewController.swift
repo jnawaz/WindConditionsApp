@@ -7,14 +7,15 @@
 //
 
 import UIKit
+import SVProgressHUD
 
 extension UIViewController {
     func showLoadingIndicatorView() {
-        //TODO: Implement indicator
+        SVProgressHUD.show()
     }
 
     func hideLoadingIndicatorView() {
-        //TODO: Implement indicator
+        SVProgressHUD.dismiss()
     }
 }
 

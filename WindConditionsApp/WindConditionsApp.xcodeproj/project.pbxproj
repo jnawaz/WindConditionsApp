@@ -356,7 +356,6 @@
 				8DE4BF0924DC623F001CD608 /* Sources */,
 				8DE4BF0A24DC623F001CD608 /* Frameworks */,
 				8DE4BF0B24DC623F001CD608 /* Resources */,
-				37CDB36AE1261CD83A4E7704 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -447,23 +446,6 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		37CDB36AE1261CD83A4E7704 /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-WindConditionsApp/Pods-WindConditionsApp-frameworks-${CONFIGURATION}-input-files.xcfilelist",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-WindConditionsApp/Pods-WindConditionsApp-frameworks-${CONFIGURATION}-output-files.xcfilelist",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WindConditionsApp/Pods-WindConditionsApp-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		6B0B95382F3AAC6CDD718AAC /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
