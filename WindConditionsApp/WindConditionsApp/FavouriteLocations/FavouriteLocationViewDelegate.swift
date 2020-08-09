@@ -13,4 +13,5 @@ protocol FavouriteLocationViewDelegate: class {
     func hideEmptyFavouritesView()
     func showLoadingIndicator()
     func hideLoadingIndicator()
+    func showFavouritesView()
 }

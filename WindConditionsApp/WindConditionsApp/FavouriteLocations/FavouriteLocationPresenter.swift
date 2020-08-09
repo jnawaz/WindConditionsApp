@@ -24,7 +24,11 @@ class FavouriteLocationPresenter: NSObject {
     func viewDidLoad() {
         if let coreDataContext = managedObjectContext {
             if City.hasStoredCities(with: coreDataContext) {
-                self.viewDelegate?.hideEmptyFavouritesView()
+                if FavouriteCities.hasStoredFavourites(with: coreDataContext) {
+                    self.viewDelegate?.showFavouritesView()
+                } else {
+                    self.viewDelegate?.hideEmptyFavouritesView()
+                }
             } else {
                 self.viewDelegate?.showEmptyFavouritesView()
                 self.viewDelegate?.showLoadingIndicator()
@@ -40,17 +44,13 @@ class FavouriteLocationPresenter: NSObject {
         }
 
         if let coreDataContext = managedObjectContext {
-            let privateContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
-            privateContext.persistentStoreCoordinator = coreDataContext.persistentStoreCoordinator
-            privateContext.perform {
-                for city in cities {
-                    City.populateAndInsertCity(city, with: coreDataContext)
-                }
-                do {
-                    try coreDataContext.save()
-                } catch {
-                    fatalError("Failed to save cities")
-                }
+            for city in cities {
+                City.populateAndInsertCity(city, with: coreDataContext)
+            }
+            do {
+                try coreDataContext.save()
+            } catch {
+                fatalError("Failed to save cities")
             }
         }
     }

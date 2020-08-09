@@ -15,13 +15,51 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lM8-83-5Pr" userLabel="EmptyFavouritesView">
+                                <rect key="frame" x="0.0" y="44" width="414" height="818"/>
+                                <subviews>
+                                    <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="iGu-FC-RFD">
+                                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <connections>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="zRH-MX-SvA"/>
+                                        </connections>
+                                    </searchBar>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="CnR-YA-OjM">
+                                        <rect key="frame" x="0.0" y="56" width="414" height="762"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </tableView>
+                                </subviews>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <constraints>
+                                    <constraint firstItem="iGu-FC-RFD" firstAttribute="leading" secondItem="lM8-83-5Pr" secondAttribute="leading" id="8fB-nu-p5f"/>
+                                    <constraint firstItem="iGu-FC-RFD" firstAttribute="top" secondItem="lM8-83-5Pr" secondAttribute="top" id="bfb-oC-mgi"/>
+                                    <constraint firstItem="CnR-YA-OjM" firstAttribute="leading" secondItem="lM8-83-5Pr" secondAttribute="leading" id="duN-VY-Bq4"/>
+                                    <constraint firstAttribute="bottom" secondItem="CnR-YA-OjM" secondAttribute="bottom" id="hBu-PV-222"/>
+                                    <constraint firstAttribute="trailing" secondItem="CnR-YA-OjM" secondAttribute="trailing" id="ofh-n9-0R9"/>
+                                    <constraint firstAttribute="trailing" secondItem="iGu-FC-RFD" secondAttribute="trailing" id="sa5-vR-6o8"/>
+                                    <constraint firstItem="CnR-YA-OjM" firstAttribute="top" secondItem="iGu-FC-RFD" secondAttribute="bottom" id="upR-9E-VcX"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="lM8-83-5Pr" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="IrA-Sf-m1c"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lM8-83-5Pr" secondAttribute="trailing" id="Tlz-x8-Awx"/>
+                            <constraint firstItem="lM8-83-5Pr" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="awB-KU-GQJ"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="lM8-83-5Pr" secondAttribute="bottom" id="xoD-FK-5J2"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="noFavouritesSearchBar" destination="iGu-FC-RFD" id="rCn-SQ-FJj"/>
+                        <outlet property="noFavouritesSearchTableView" destination="CnR-YA-OjM" id="cMP-1z-Kyq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="80" y="139"/>
+            <point key="canvasLocation" x="79.710144927536234" y="138.61607142857142"/>
         </scene>
     </scenes>
 </document>

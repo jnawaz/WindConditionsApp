@@ -9,16 +9,24 @@
 import UIKit
 
 class FavouriteLocationViewController: UIViewController, FavouriteLocationViewDelegate {
+    @IBOutlet var noFavouritesSearchBar: UISearchBar!
+    @IBOutlet var noFavouritesSearchTableView: UITableView!
+
     var presenter: FavouriteLocationPresenter?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter = FavouriteLocationPresenter(viewDelegate: self, managedObjectContext: CoreDataStack().mainContext)
         presenter?.viewDidLoad()
+        setupUI()
+    }
+
+    private func setupUI() {
+        self.view.backgroundColor = Colors.emptyFavouritesBackground
+        noFavouritesSearchTableView.backgroundColor = Colors.emptyFavouritesBackground
     }
 
     //MARK: - View Delegate Methods
-
     func showEmptyFavouritesView() {
         //TODO: Implement method
     }
@@ -33,5 +41,15 @@ class FavouriteLocationViewController: UIViewController, FavouriteLocationViewDe
 
     func hideLoadingIndicator() {
         self.hideLoadingIndicatorView()
+    }
+
+    func showFavouritesView() {
+        // TODO: Implement method
+    }
+}
+
+extension FavouriteLocationViewController: UISearchBarDelegate {
+    public func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        //TODO: Implement search
     }
 }

@@ -20,6 +20,7 @@
 		60379753432DABB01B486CE2 /* NSManagedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60379FEB88082BE45FA642C7 /* NSManagedObject.swift */; };
 		603797931F6659CF8700C1E5 /* FavouriteLocationPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603792EE5223DA16EEBE242C /* FavouriteLocationPresenter.swift */; };
 		603797AFC6681A1C323E6048 /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6037930C62684586C325F254 /* CoreDataStack.swift */; };
+		603798911F319E428B98D95C /* Colors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603790270D457D9B546C73D5 /* Colors.swift */; };
 		603799F54C5849D010804C1D /* CityListDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6037995A8BFBE7404A51AD0F /* CityListDecoder.swift */; };
 		60379BEAB9F4A06EE72B1DB0 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6037993CCA8F7BFBDA72AB2A /* NetworkManager.swift */; };
 		60379C976007C94B1FECAA29 /* WebServiceConfigurationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6037981E27866A998D99EA03 /* WebServiceConfigurationTests.swift */; };
@@ -54,6 +55,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		603790270D457D9B546C73D5 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		6037913764042762804BD1D7 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		6037921653697C11A7696F25 /* FavouriteLocationViewDelegateSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouriteLocationViewDelegateSpy.swift; sourceTree = "<group>"; };
 		603792EE5223DA16EEBE242C /* FavouriteLocationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouriteLocationPresenter.swift; sourceTree = "<group>"; };
@@ -162,6 +164,7 @@
 			children = (
 				6037953F6A24A84DC9802642 /* FileHelper.swift */,
 				60379DEDE50A0A039FF93121 /* Decoder */,
+				603790270D457D9B546C73D5 /* Colors.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -409,6 +412,7 @@
 				60379263DA9AA17A692FEE26 /* FavouriteLocationViewDelegate.swift in Sources */,
 				603796C33B742E5A4182E7D1 /* FavouriteLocationViewDelegateSpy.swift in Sources */,
 				603797AFC6681A1C323E6048 /* CoreDataStack.swift in Sources */,
+				603798911F319E428B98D95C /* Colors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

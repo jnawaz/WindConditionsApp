@@ -13,4 +13,14 @@ import CoreData
 @objc(FavouriteCities)
 public class FavouriteCities: AbstractCity {
 
+    class func hasStoredFavourites(with context: NSManagedObjectContext) -> Bool {
+        var favouriteCities = -1
+        var favouriteCitiesRequest = NSFetchRequest<NSManagedObject>(entityName: "FavouriteCities")
+        do {
+            favouriteCities = try context.fetch(favouriteCitiesRequest).count
+        } catch {
+            fatalError("Fundamental error fetching favourite cities")
+        }
+        return favouriteCities > 0
+    }
 }

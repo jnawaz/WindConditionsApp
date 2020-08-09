@@ -16,6 +16,7 @@ class FavouriteLocationPresenterTests: XCTestCase {
     let testContext = CoreDataTestStack().mainContext
 
     func testOnViewDidLoadNoCitiesShouldShowEmptyFavourtiesView() {
+        CoreDataTestStack().clearCoreDataStore()
         let presenter = FavouriteLocationPresenter(viewDelegate: viewDelegate, managedObjectContext: testContext)
         presenter.viewDidLoad()
 
@@ -23,6 +24,7 @@ class FavouriteLocationPresenterTests: XCTestCase {
     }
 
     func testOnViewDidLoadHasCitiesDataShouldHideEmptyFavouritesView() {
+        CoreDataTestStack().clearCoreDataStore()
         let city = NSEntityDescription.insertNewObject(forEntityName: "City", into: testContext) as! City
         do {
             try testContext.save()
@@ -37,6 +39,7 @@ class FavouriteLocationPresenterTests: XCTestCase {
     }
 
     func testOnViewDidLoadWhilstPopulatingCityDataShowsLoadingIndicatorView() {
+        CoreDataTestStack().clearCoreDataStore()
         let presenter = FavouriteLocationPresenter(viewDelegate: viewDelegate, managedObjectContext: testContext)
         presenter.viewDidLoad()
 
@@ -44,6 +47,7 @@ class FavouriteLocationPresenterTests: XCTestCase {
     }
 
     func testOnViewDidLoadCityDataExistsShouldNotShowLoadingIndicator() {
+        CoreDataTestStack().clearCoreDataStore()
         let city = NSEntityDescription.insertNewObject(forEntityName: "City", into: testContext) as! City
         do {
             try testContext.save()
@@ -55,5 +59,22 @@ class FavouriteLocationPresenterTests: XCTestCase {
         presenter.viewDidLoad()
 
         XCTAssertFalse(viewDelegate.shouldShowLoadingIndicator)
+    }
+
+    func testOnViewDidLoadUserHasFavouriteCitiesShouldShowFavouritesView() {
+        CoreDataTestStack().clearCoreDataStore()
+        let city = NSEntityDescription.insertNewObject(forEntityName: "City", into: testContext) as! City
+        let favouriteCity = NSEntityDescription.insertNewObject(forEntityName: "FavouriteCities", into: testContext) as? FavouriteCities
+        do {
+            try testContext.save()
+        } catch {
+            XCTFail("Shouldn't fail here")
+        }
+
+        let presenter = FavouriteLocationPresenter(viewDelegate: viewDelegate, managedObjectContext: testContext)
+        presenter.viewDidLoad()
+
+        XCTAssertTrue(viewDelegate.shouldShowFavouritesView)
+
     }
 }
