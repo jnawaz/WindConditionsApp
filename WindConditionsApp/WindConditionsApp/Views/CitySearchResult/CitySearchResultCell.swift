@@ -35,6 +35,7 @@ class CitySearchResultCell: UITableViewCell {
             }
         }
         searchResultLabel.text = labelText
+        searchResultLabel.textColor = Colors.darkText
     }
 
     private func stateNameIsEmpty(stateName: String) -> Bool {

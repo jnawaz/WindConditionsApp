@@ -93,4 +93,20 @@ extension FavouriteLocationViewController: UITableViewDataSource, UITableViewDel
 
         return cell!
     }
+
+    public func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+
+    public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        var frame = CGRect.zero
+        frame.size.height = .leastNormalMagnitude
+        return UIView(frame: frame)
+    }
+
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
+
+
+    }
 }

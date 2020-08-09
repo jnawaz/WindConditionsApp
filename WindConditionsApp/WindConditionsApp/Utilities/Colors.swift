@@ -17,6 +17,7 @@ struct Colors {
     static let emptyFavouritesBackground = ReferenceColors.lavender
     static let launchScreenBackground = ReferenceColors.lavender
     static let noFavouritesSearchBarTint = ReferenceColors.darkGreen
+    static let darkText = ReferenceColors.darkGreen
 }
 
 extension UIColor {
