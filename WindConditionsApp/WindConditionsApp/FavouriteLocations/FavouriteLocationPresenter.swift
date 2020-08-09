@@ -29,6 +29,7 @@ class FavouriteLocationPresenter: NSObject {
                     self.viewDelegate?.showFavouritesView()
                 } else {
                     self.viewDelegate?.hideEmptyFavouritesView()
+                    self.viewDelegate?.showAddCityInstructionView()
                 }
             } else {
                 self.viewDelegate?.showEmptyFavouritesView()

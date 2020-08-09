@@ -14,6 +14,8 @@ class FavouriteLocationViewController: UIViewController, FavouriteLocationViewDe
     @IBOutlet var addNewCityInstructionView: UIView!
     @IBOutlet var addNewCityInstructionTitle: UILabel!
     @IBOutlet var addNewCityInstructionBody: UILabel!
+    @IBOutlet var emptyFavourtiesView: UIView!
+    @IBOutlet var haveSavedFavouritesView: UIView!
 
     var presenter: FavouriteLocationPresenter?
     var searchCityResults: [City]?
@@ -37,7 +39,6 @@ class FavouriteLocationViewController: UIViewController, FavouriteLocationViewDe
 
     //MARK: - View Delegate Methods
     func showEmptyFavouritesView() {
-        //TODO: Implement method
     }
 
     func hideEmptyFavouritesView() {
@@ -55,13 +56,17 @@ class FavouriteLocationViewController: UIViewController, FavouriteLocationViewDe
     func showFavouritesView() {
         // TODO: Implement method
     }
+
+    func showAddCityInstructionView() {
+        self.view.bringSubviewToFront(self.addNewCityInstructionView)
+    }
+
 }
 
 //MARK: - UISearchBar Methods
 extension FavouriteLocationViewController: UISearchBarDelegate {
     public func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         presenter?.searchFor(city: searchText, completionHandler: { cities in
-
             self.searchCityResults = nil
             self.noFavouritesSearchTableView.reloadData()
 
@@ -69,7 +74,6 @@ extension FavouriteLocationViewController: UISearchBarDelegate {
                 self.searchCityResults = citiesResult
                 self.noFavouritesSearchTableView.reloadData()
             }
-
         })
     }
 }
@@ -106,7 +110,5 @@ extension FavouriteLocationViewController: UITableViewDataSource, UITableViewDel
 
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
-
-
     }
 }

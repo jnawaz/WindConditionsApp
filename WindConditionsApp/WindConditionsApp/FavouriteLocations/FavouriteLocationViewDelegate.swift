@@ -14,4 +14,5 @@ protocol FavouriteLocationViewDelegate: class {
     func showLoadingIndicator()
     func hideLoadingIndicator()
     func showFavouritesView()
+    func showAddCityInstructionView()
 }
