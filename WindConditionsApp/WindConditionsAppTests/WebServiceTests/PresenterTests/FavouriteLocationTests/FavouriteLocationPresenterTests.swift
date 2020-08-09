@@ -35,4 +35,25 @@ class FavouriteLocationPresenterTests: XCTestCase {
 
         XCTAssertTrue(viewDelegate.shouldHideEmptyFavouritesView)
     }
+
+    func testOnViewDidLoadWhilstPopulatingCityDataShowsLoadingIndicatorView() {
+        let presenter = FavouriteLocationPresenter(viewDelegate: viewDelegate, managedObjectContext: testContext)
+        presenter.viewDidLoad()
+
+        XCTAssertTrue(viewDelegate.shouldShowLoadingIndicator)
+    }
+
+    func testOnViewDidLoadCityDataExistsShouldNotShowLoadingIndicator() {
+        let city = NSEntityDescription.insertNewObject(forEntityName: "City", into: testContext) as! City
+        do {
+            try testContext.save()
+        } catch {
+            XCTFail("Shouldn't fail here")
+        }
+
+        let presenter = FavouriteLocationPresenter(viewDelegate: viewDelegate, managedObjectContext: testContext)
+        presenter.viewDidLoad()
+
+        XCTAssertFalse(viewDelegate.shouldShowLoadingIndicator)
+    }
 }

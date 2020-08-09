@@ -11,4 +11,6 @@ import UIKit
 protocol FavouriteLocationViewDelegate: class {
     func showEmptyFavouritesView()
     func hideEmptyFavouritesView()
+    func showLoadingIndicator()
+    func hideLoadingIndicator()
 }

@@ -25,4 +25,12 @@ class FavouriteLocationViewController: UIViewController, FavouriteLocationViewDe
     func hideEmptyFavouritesView() {
         //TODO: Implement method
     }
+
+    func showLoadingIndicator() {
+        //TODO: Implement method
+    }
+
+    func hideLoadingIndicator() {
+        //TODO: Implement method
+    }
 }

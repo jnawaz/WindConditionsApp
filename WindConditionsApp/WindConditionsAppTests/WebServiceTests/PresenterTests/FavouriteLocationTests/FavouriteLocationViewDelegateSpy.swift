@@ -11,6 +11,8 @@ import UIKit
 class FavouriteLocationViewDelegateSpy: FavouriteLocationViewDelegate {
     var shouldShowEmptyFavouritesView = false
     var shouldHideEmptyFavouritesView = false
+    var shouldShowLoadingIndicator = false
+    var shouldHideLoadingIndicator = false
 
     func showEmptyFavouritesView() {
         shouldShowEmptyFavouritesView = true
@@ -18,5 +20,13 @@ class FavouriteLocationViewDelegateSpy: FavouriteLocationViewDelegate {
 
     func hideEmptyFavouritesView() {
         shouldHideEmptyFavouritesView = true
+    }
+
+    func showLoadingIndicator() {
+        shouldShowLoadingIndicator = true
+    }
+
+    func hideLoadingIndicator() {
+        shouldHideLoadingIndicator = true
     }
 }
