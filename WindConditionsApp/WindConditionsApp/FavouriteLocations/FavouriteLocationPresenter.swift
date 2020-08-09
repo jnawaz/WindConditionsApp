@@ -56,12 +56,14 @@ class FavouriteLocationPresenter: NSObject {
         }
     }
 
-    func searchFor(city: String, completionHandler: @escaping ([City]) -> Void) {
+    func searchFor(city: String, completionHandler: @escaping ([City]?) -> Void) {
         if let coreDataContext = managedObjectContext {
             let searchedCities = City.searchFor(city, with: coreDataContext)
             if let searchCityResult = searchedCities {
                 if !searchCityResult.isEmpty {
                     completionHandler(searchCityResult)
+                } else {
+                    completionHandler(nil)
                 }
             }
         }

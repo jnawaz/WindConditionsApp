@@ -16,7 +16,7 @@ class FavouriteLocationViewController: UIViewController, FavouriteLocationViewDe
     @IBOutlet var addNewCityInstructionBody: UILabel!
 
     var presenter: FavouriteLocationPresenter?
-    var searchCityResults: [City] = []
+    var searchCityResults: [City]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -31,6 +31,8 @@ class FavouriteLocationViewController: UIViewController, FavouriteLocationViewDe
         addNewCityInstructionView.backgroundColor = Colors.emptyFavouritesBackground
         addNewCityInstructionTitle.text = localizedString(key: "NoFavouritesAdded.Title")
         addNewCityInstructionBody.text = localizedString(key: "NoFavouritesAdded.Body")
+        noFavouritesSearchBar.placeholder = localizedString(key: "NoFavouritesSearchBarPlaceHolder")
+        noFavouritesSearchBar.tintColor = Colors.noFavouritesSearchBarTint
     }
 
     //MARK: - View Delegate Methods
@@ -59,8 +61,15 @@ class FavouriteLocationViewController: UIViewController, FavouriteLocationViewDe
 extension FavouriteLocationViewController: UISearchBarDelegate {
     public func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         presenter?.searchFor(city: searchText, completionHandler: { cities in
-            self.searchCityResults = cities
+
+            self.searchCityResults = nil
             self.noFavouritesSearchTableView.reloadData()
+
+            if let citiesResult = cities {
+                self.searchCityResults = citiesResult
+                self.noFavouritesSearchTableView.reloadData()
+            }
+
         })
     }
 }
@@ -68,7 +77,7 @@ extension FavouriteLocationViewController: UISearchBarDelegate {
 // MARK: - UITableView Methods
 extension FavouriteLocationViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.searchCityResults.count
+        return self.searchCityResults?.count ?? 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -79,7 +88,7 @@ extension FavouriteLocationViewController: UITableViewDataSource, UITableViewDel
         }
 
         var labelText = ""
-        var city = searchCityResults[indexPath.row]
+        guard var city = searchCityResults?[indexPath.row] else { return UITableViewCell() }
         cell?.setLabel(with: city)
 
         return cell!

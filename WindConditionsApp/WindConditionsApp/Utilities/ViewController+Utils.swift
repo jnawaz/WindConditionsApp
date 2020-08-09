@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ViewController+Utils.swift
 //  WindConditionsApp
 //
 //  Created by Jamil Nawaz on 06/08/2020.
@@ -7,15 +7,12 @@
 //
 
 import UIKit
-import SVProgressHUD
 
 extension UIViewController {
     func showLoadingIndicatorView() {
-        SVProgressHUD.show()
     }
 
     func hideLoadingIndicatorView() {
-        SVProgressHUD.dismiss()
     }
 }
 
