@@ -48,8 +48,20 @@ class FavouriteLocationViewController: UIViewController, FavouriteLocationViewDe
     }
 }
 
+//MARK: - UISearchBar Methods
 extension FavouriteLocationViewController: UISearchBarDelegate {
     public func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         //TODO: Implement search
+    }
+}
+
+// MARK: - UITableView Methods
+extension FavouriteLocationViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        /* To implement */
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        /* To implement */
     }
 }
