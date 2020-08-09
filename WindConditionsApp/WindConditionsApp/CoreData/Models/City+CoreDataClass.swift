@@ -32,6 +32,9 @@ public class City: AbstractCity {
         if let cityState = city.state {
             cityManagedObject.state = cityState
         }
+        if let cityCountry = city.country {
+            cityManagedObject.country = cityCountry
+        }
         if let cityLongLat = city.coord {
             let longLatManagedObject = NSEntityDescription.insertNewObject(forEntityName: "Coordinates", into: context) as! Coordinates
             longLatManagedObject.longitude = cityLongLat.lon
