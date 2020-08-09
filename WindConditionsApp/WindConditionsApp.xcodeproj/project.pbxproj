@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		603790EBBA57A24ED6D3DA99 /* DetailPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6037932A9126A8BC64307A7E /* DetailPresenter.swift */; };
+		6037919F0057BB2F2AB90449 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60379AEAC25D42F71AC0B579 /* DetailViewController.swift */; };
 		603791DDC5E40F8D92F59454 /* ViewController+Utils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60379272799AF35996D2ABFE /* ViewController+Utils.swift */; };
 		6037921E04ED1F45C5B628A7 /* Montserrat-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6037904D9F3D8424D3EBBA2F /* Montserrat-ExtraBold.ttf */; };
 		6037922C4BD4A998CF079ED9 /* WebServiceConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60379A436F01581B9FEDC684 /* WebServiceConfiguration.swift */; };
@@ -33,6 +35,7 @@
 		603799F54C5849D010804C1D /* CityListDecoder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6037995A8BFBE7404A51AD0F /* CityListDecoder.swift */; };
 		60379A744FAFDE6A020B07BE /* Montserrat-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6037914373907D9C4470F167 /* Montserrat-Italic.ttf */; };
 		60379BEAB9F4A06EE72B1DB0 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6037993CCA8F7BFBDA72AB2A /* NetworkManager.swift */; };
+		60379C66592AB2B4260B6827 /* DetailViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6037907129331ECCDA35FDC9 /* DetailViewDelegate.swift */; };
 		60379C976007C94B1FECAA29 /* WebServiceConfigurationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6037981E27866A998D99EA03 /* WebServiceConfigurationTests.swift */; };
 		60379D7A7A1E9003EA7FDF9B /* FavouriteLocationPresenterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60379D3E87DD0DF84588B185 /* FavouriteLocationPresenterTests.swift */; };
 		60379DEBDCE568043E39C4F8 /* Montserrat-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 603795ECECFFA6BD8C47E5E0 /* Montserrat-Medium.ttf */; };
@@ -72,12 +75,14 @@
 		5159DD2672CEA75DB06353AC /* Pods_WindConditionsApp.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WindConditionsApp.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		603790270D457D9B546C73D5 /* Colors.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Colors.swift; sourceTree = "<group>"; };
 		6037904D9F3D8424D3EBBA2F /* Montserrat-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file.ttf; path = "Montserrat-ExtraBold.ttf"; sourceTree = "<group>"; };
+		6037907129331ECCDA35FDC9 /* DetailViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewDelegate.swift; sourceTree = "<group>"; };
 		6037913764042762804BD1D7 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		6037914373907D9C4470F167 /* Montserrat-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file.ttf; path = "Montserrat-Italic.ttf"; sourceTree = "<group>"; };
 		6037921653697C11A7696F25 /* FavouriteLocationViewDelegateSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouriteLocationViewDelegateSpy.swift; sourceTree = "<group>"; };
 		60379272799AF35996D2ABFE /* ViewController+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+Utils.swift"; sourceTree = "<group>"; };
 		603792EE5223DA16EEBE242C /* FavouriteLocationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouriteLocationPresenter.swift; sourceTree = "<group>"; };
 		6037930C62684586C325F254 /* CoreDataStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		6037932A9126A8BC64307A7E /* DetailPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailPresenter.swift; sourceTree = "<group>"; };
 		603793A52F9B36EABCBDE08B /* CityTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CityTests.swift; sourceTree = "<group>"; };
 		603793DBACF3B0736058F5D2 /* URLSessionMock.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = URLSessionMock.swift; sourceTree = "<group>"; };
 		6037949CC805625AA2ECED1A /* FavouriteLocationViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouriteLocationViewDelegate.swift; sourceTree = "<group>"; };
@@ -96,6 +101,7 @@
 		60379A436F01581B9FEDC684 /* WebServiceConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WebServiceConfiguration.swift; sourceTree = "<group>"; };
 		60379A668576DAE11B2B7EE0 /* Montserrat-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file.ttf; path = "Montserrat-SemiBold.ttf"; sourceTree = "<group>"; };
 		60379AA3610AB06F0820D98E /* Fonts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		60379AEAC25D42F71AC0B579 /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		60379D3E87DD0DF84588B185 /* FavouriteLocationPresenterTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouriteLocationPresenterTests.swift; sourceTree = "<group>"; };
 		60379EFA945577703AB3B073 /* CoreDataTestStack.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CoreDataTestStack.swift; sourceTree = "<group>"; };
 		60379FEB88082BE45FA642C7 /* NSManagedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NSManagedObject.swift; sourceTree = "<group>"; };
@@ -156,6 +162,16 @@
 			);
 			name = Pods;
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		603791ADE17A229842657D9A /* DetailViewController */ = {
+			isa = PBXGroup;
+			children = (
+				60379AEAC25D42F71AC0B579 /* DetailViewController.swift */,
+				6037932A9126A8BC64307A7E /* DetailPresenter.swift */,
+				6037907129331ECCDA35FDC9 /* DetailViewDelegate.swift */,
+			);
+			path = DetailViewController;
 			sourceTree = "<group>";
 		};
 		603792D2D1C76FAD34487F1E /* PresenterTests */ = {
@@ -354,6 +370,7 @@
 				603798776DC2476388D2B93E /* Utilities */,
 				603794001E9C1BA2389789F9 /* FavouriteLocations */,
 				60379FE4ED64DDF6BFC97EC7 /* Views */,
+				603791ADE17A229842657D9A /* DetailViewController */,
 			);
 			path = WindConditionsApp;
 			sourceTree = "<group>";
@@ -563,6 +580,9 @@
 				603797EECB80DA85D80EFA5C /* CitySearchResultCell.swift in Sources */,
 				603791DDC5E40F8D92F59454 /* ViewController+Utils.swift in Sources */,
 				603798726DAFD7142B9491E5 /* Fonts.swift in Sources */,
+				6037919F0057BB2F2AB90449 /* DetailViewController.swift in Sources */,
+				603790EBBA57A24ED6D3DA99 /* DetailPresenter.swift in Sources */,
+				60379C66592AB2B4260B6827 /* DetailViewDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
