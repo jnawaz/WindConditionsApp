@@ -39,6 +39,7 @@ public class City: AbstractCity {
             let longLatManagedObject = NSEntityDescription.insertNewObject(forEntityName: "Coordinates", into: context) as! Coordinates
             longLatManagedObject.longitude = cityLongLat.lon
             longLatManagedObject.latitude = cityLongLat.lat
+            cityManagedObject.coordinates = longLatManagedObject
         }
     }
 
