@@ -25,7 +25,7 @@ public class City: AbstractCity {
     }
 
     class func populateAndInsertCity(_ city: CityStruct, with context: NSManagedObjectContext) {
-        let cityManagedObject = NSEntityDescription.insertNewObject(forEntityName: NSManagedObject.entity().name!, into: context) as! City
+        let cityManagedObject = NSEntityDescription.insertNewObject(forEntityName: "City", into: context) as! City
         if let cityName = city.name {
             cityManagedObject.name = cityName
         }
