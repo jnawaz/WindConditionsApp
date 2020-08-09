@@ -11,6 +11,9 @@ import UIKit
 class FavouriteLocationViewController: UIViewController, FavouriteLocationViewDelegate {
     @IBOutlet var noFavouritesSearchBar: UISearchBar!
     @IBOutlet var noFavouritesSearchTableView: UITableView!
+    @IBOutlet var addNewCityInstructionView: UIView!
+    @IBOutlet var addNewCityInstructionTitle: UILabel!
+    @IBOutlet var addNewCityInstructionBody: UILabel!
 
     var presenter: FavouriteLocationPresenter?
 
@@ -24,6 +27,9 @@ class FavouriteLocationViewController: UIViewController, FavouriteLocationViewDe
     private func setupUI() {
         self.view.backgroundColor = Colors.emptyFavouritesBackground
         noFavouritesSearchTableView.backgroundColor = Colors.emptyFavouritesBackground
+        addNewCityInstructionView.backgroundColor = Colors.emptyFavouritesBackground
+        addNewCityInstructionTitle.text = localizedString(key: "NoFavouritesAdded.Title")
+        addNewCityInstructionBody.text = localizedString(key: "NoFavouritesAdded.Body")
     }
 
     //MARK: - View Delegate Methods
@@ -58,10 +64,10 @@ extension FavouriteLocationViewController: UISearchBarDelegate {
 // MARK: - UITableView Methods
 extension FavouriteLocationViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        /* To implement */
+        return 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        /* To implement */
+        return UITableViewCell()
     }
 }

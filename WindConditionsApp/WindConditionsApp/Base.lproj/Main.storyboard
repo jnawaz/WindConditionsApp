@@ -30,16 +30,49 @@
                                         <rect key="frame" x="0.0" y="56" width="414" height="762"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                     </tableView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z3I-0d-D86" userLabel="AddNewCityInstructionView">
+                                        <rect key="frame" x="0.0" y="56" width="414" height="762"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="MEL-Od-hov">
+                                                <rect key="frame" x="0.0" y="354.5" width="414" height="53"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;Add city title&gt;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vT9-rj-mGq">
+                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;Add city instruction body&gt;" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3mR-tp-ygC">
+                                                        <rect key="frame" x="0.0" y="32.5" width="414" height="20.5"/>
+                                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstItem="MEL-Od-hov" firstAttribute="centerX" secondItem="Z3I-0d-D86" secondAttribute="centerX" id="3M5-j4-kkT"/>
+                                            <constraint firstAttribute="trailing" secondItem="MEL-Od-hov" secondAttribute="trailing" id="EF0-2r-9cf"/>
+                                            <constraint firstItem="MEL-Od-hov" firstAttribute="leading" secondItem="Z3I-0d-D86" secondAttribute="leading" id="dz7-6W-Cv2"/>
+                                            <constraint firstItem="MEL-Od-hov" firstAttribute="centerY" secondItem="Z3I-0d-D86" secondAttribute="centerY" id="yoc-dP-TDR"/>
+                                        </constraints>
+                                    </view>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
                                     <constraint firstItem="iGu-FC-RFD" firstAttribute="leading" secondItem="lM8-83-5Pr" secondAttribute="leading" id="8fB-nu-p5f"/>
                                     <constraint firstItem="iGu-FC-RFD" firstAttribute="top" secondItem="lM8-83-5Pr" secondAttribute="top" id="bfb-oC-mgi"/>
+                                    <constraint firstAttribute="trailing" secondItem="Z3I-0d-D86" secondAttribute="trailing" id="dJQ-zU-SY4"/>
                                     <constraint firstItem="CnR-YA-OjM" firstAttribute="leading" secondItem="lM8-83-5Pr" secondAttribute="leading" id="duN-VY-Bq4"/>
                                     <constraint firstAttribute="bottom" secondItem="CnR-YA-OjM" secondAttribute="bottom" id="hBu-PV-222"/>
+                                    <constraint firstItem="Z3I-0d-D86" firstAttribute="leading" secondItem="lM8-83-5Pr" secondAttribute="leading" id="kGG-ZO-J0F"/>
+                                    <constraint firstAttribute="bottom" secondItem="Z3I-0d-D86" secondAttribute="bottom" id="o9j-A6-Zre"/>
                                     <constraint firstAttribute="trailing" secondItem="CnR-YA-OjM" secondAttribute="trailing" id="ofh-n9-0R9"/>
                                     <constraint firstAttribute="trailing" secondItem="iGu-FC-RFD" secondAttribute="trailing" id="sa5-vR-6o8"/>
                                     <constraint firstItem="CnR-YA-OjM" firstAttribute="top" secondItem="iGu-FC-RFD" secondAttribute="bottom" id="upR-9E-VcX"/>
+                                    <constraint firstItem="Z3I-0d-D86" firstAttribute="top" secondItem="iGu-FC-RFD" secondAttribute="bottom" id="vC8-yQ-dLk"/>
                                 </constraints>
                             </view>
                         </subviews>
@@ -53,6 +86,9 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="addNewCityInstructionBody" destination="3mR-tp-ygC" id="VYp-oS-qZg"/>
+                        <outlet property="addNewCityInstructionTitle" destination="vT9-rj-mGq" id="H4D-np-2qZ"/>
+                        <outlet property="addNewCityInstructionView" destination="Z3I-0d-D86" id="dJB-yS-5lg"/>
                         <outlet property="noFavouritesSearchBar" destination="iGu-FC-RFD" id="rCn-SQ-FJj"/>
                         <outlet property="noFavouritesSearchTableView" destination="CnR-YA-OjM" id="cMP-1z-Kyq"/>
                     </connections>
