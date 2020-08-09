@@ -38,14 +38,19 @@ class FavouriteLocationPresenter: NSObject {
         guard let cities = CityListDecoder().getCityData() else {
             return
         }
+
         if let coreDataContext = managedObjectContext {
-            for city in cities {
-                City.populateAndInsertCity(city, with: coreDataContext)
-            }
-            do {
-                try coreDataContext.save()
-            } catch {
-                fatalError("Failed to save cities")
+            let privateContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
+            privateContext.persistentStoreCoordinator = coreDataContext.persistentStoreCoordinator
+            privateContext.perform {
+                for city in cities {
+                    City.populateAndInsertCity(city, with: coreDataContext)
+                }
+                do {
+                    try coreDataContext.save()
+                } catch {
+                    fatalError("Failed to save cities")
+                }
             }
         }
     }
