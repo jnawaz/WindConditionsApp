@@ -9,18 +9,36 @@
 import UIKit
 
 class FavouriteLocationViewController: UIViewController, FavouriteLocationViewDelegate {
+    @IBOutlet var noFavouritesSearchBar: UISearchBar!
+    @IBOutlet var noFavouritesSearchTableView: UITableView!
+    @IBOutlet var addNewCityInstructionView: UIView!
+    @IBOutlet var addNewCityInstructionTitle: UILabel!
+    @IBOutlet var addNewCityInstructionBody: UILabel!
+    @IBOutlet var emptyFavourtiesView: UIView!
+    @IBOutlet var haveSavedFavouritesView: UIView!
+
     var presenter: FavouriteLocationPresenter?
+    var searchCityResults: [City]?
 
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter = FavouriteLocationPresenter(viewDelegate: self, managedObjectContext: CoreDataStack().mainContext)
         presenter?.viewDidLoad()
+        setupUI()
+    }
+
+    private func setupUI() {
+        self.view.backgroundColor = Colors.emptyFavouritesBackground
+        noFavouritesSearchTableView.backgroundColor = Colors.emptyFavouritesBackground
+        addNewCityInstructionView.backgroundColor = Colors.emptyFavouritesBackground
+        addNewCityInstructionTitle.text = localizedString(key: "NoFavouritesAdded.Title")
+        addNewCityInstructionBody.text = localizedString(key: "NoFavouritesAdded.Body")
+        noFavouritesSearchBar.placeholder = localizedString(key: "NoFavouritesSearchBarPlaceHolder")
+        noFavouritesSearchBar.tintColor = Colors.noFavouritesSearchBarTint
     }
 
     //MARK: - View Delegate Methods
-
     func showEmptyFavouritesView() {
-        //TODO: Implement method
     }
 
     func hideEmptyFavouritesView() {
@@ -33,5 +51,64 @@ class FavouriteLocationViewController: UIViewController, FavouriteLocationViewDe
 
     func hideLoadingIndicator() {
         self.hideLoadingIndicatorView()
+    }
+
+    func showFavouritesView() {
+        // TODO: Implement method
+    }
+
+    func showAddCityInstructionView() {
+        self.view.bringSubviewToFront(self.addNewCityInstructionView)
+    }
+
+}
+
+//MARK: - UISearchBar Methods
+extension FavouriteLocationViewController: UISearchBarDelegate {
+    public func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
+        presenter?.searchFor(city: searchText, completionHandler: { cities in
+            self.searchCityResults = nil
+            self.noFavouritesSearchTableView.reloadData()
+
+            if let citiesResult = cities {
+                self.searchCityResults = citiesResult
+                self.noFavouritesSearchTableView.reloadData()
+            }
+        })
+    }
+}
+
+// MARK: - UITableView Methods
+extension FavouriteLocationViewController: UITableViewDataSource, UITableViewDelegate {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return self.searchCityResults?.count ?? 0
+    }
+
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let reuseIdentifier = CitySearchResultCell.identifier
+        var cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier) as? CitySearchResultCell
+        if cell == nil {
+            cell = CitySearchResultCell(style: .default, reuseIdentifier: reuseIdentifier) as CitySearchResultCell
+        }
+
+        var labelText = ""
+        guard var city = searchCityResults?[indexPath.row] else { return UITableViewCell() }
+        cell?.setLabel(with: city)
+
+        return cell!
+    }
+
+    public func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+
+    public func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        var frame = CGRect.zero
+        frame.size.height = .leastNormalMagnitude
+        return UIView(frame: frame)
+    }
+
+    public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: true)
     }
 }

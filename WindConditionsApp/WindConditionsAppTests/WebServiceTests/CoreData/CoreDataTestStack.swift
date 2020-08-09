@@ -25,4 +25,34 @@ class CoreDataTestStack {
             }
         }
     }
+
+    func clearCoreDataStore() {
+
+        for entity in persistentContainer.managedObjectModel.entities {
+
+            guard let entityName = entity.name else {
+                continue
+            }
+
+            let fetchRequest: NSFetchRequest<NSManagedObject> = NSFetchRequest(entityName: entityName)
+            fetchRequest.includesPropertyValues = false
+
+            do {
+
+                let objects = try mainContext.fetch(fetchRequest)
+                objects.forEach(mainContext.delete)
+
+            } catch {
+                fatalError("Unable to perform batch delete for entity: \(entityName), error: \(error)")
+            }
+
+        }
+
+        do {
+            try mainContext.save()
+        } catch {
+            fatalError("Failed to clear entities")
+        }
+
+    }
 }

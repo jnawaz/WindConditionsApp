@@ -1,0 +1,12 @@
+/* 
+  Localizable.strings
+  WindConditionsApp
+
+  Created by Jamil Nawaz on 09/08/2020.
+  Copyright © 2020 Jamil Nawaz. All rights reserved.
+*/
+
+// MARK: Favourite Location
+"NoFavouritesAdded.Title" = "No favourites";
+"NoFavouritesAdded.Body" = "You haven't added any cities to track, use the search bar above to find and add cities to track";
+"NoFavouritesSearchBarPlaceHolder" = "Search for a city, e.g. London";

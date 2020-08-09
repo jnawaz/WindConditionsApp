@@ -15,7 +15,8 @@ class FavouriteLocationPresenter: NSObject {
     let filename = "citylist"
     let filetype = "json"
 
-    init(viewDelegate: FavouriteLocationViewDelegate, managedObjectContext: NSManagedObjectContext) {
+    init(viewDelegate: FavouriteLocationViewDelegate,
+         managedObjectContext: NSManagedObjectContext) {
         super.init()
         self.viewDelegate = viewDelegate
         self.managedObjectContext = managedObjectContext
@@ -24,7 +25,12 @@ class FavouriteLocationPresenter: NSObject {
     func viewDidLoad() {
         if let coreDataContext = managedObjectContext {
             if City.hasStoredCities(with: coreDataContext) {
-                self.viewDelegate?.hideEmptyFavouritesView()
+                if FavouriteCities.hasStoredFavourites(with: coreDataContext) {
+                    self.viewDelegate?.showFavouritesView()
+                } else {
+                    self.viewDelegate?.hideEmptyFavouritesView()
+                    self.viewDelegate?.showAddCityInstructionView()
+                }
             } else {
                 self.viewDelegate?.showEmptyFavouritesView()
                 self.viewDelegate?.showLoadingIndicator()
@@ -40,16 +46,25 @@ class FavouriteLocationPresenter: NSObject {
         }
 
         if let coreDataContext = managedObjectContext {
-            let privateContext = NSManagedObjectContext(concurrencyType: .privateQueueConcurrencyType)
-            privateContext.persistentStoreCoordinator = coreDataContext.persistentStoreCoordinator
-            privateContext.perform {
-                for city in cities {
-                    City.populateAndInsertCity(city, with: coreDataContext)
-                }
-                do {
-                    try coreDataContext.save()
-                } catch {
-                    fatalError("Failed to save cities")
+            for city in cities {
+                City.populateAndInsertCity(city, with: coreDataContext)
+            }
+            do {
+                try coreDataContext.save()
+            } catch {
+                fatalError("Failed to save cities")
+            }
+        }
+    }
+
+    func searchFor(city: String, completionHandler: @escaping ([City]?) -> Void) {
+        if let coreDataContext = managedObjectContext {
+            let searchedCities = City.searchFor(city, with: coreDataContext)
+            if let searchCityResult = searchedCities {
+                if !searchCityResult.isEmpty {
+                    completionHandler(searchCityResult)
+                } else {
+                    completionHandler(nil)
                 }
             }
         }

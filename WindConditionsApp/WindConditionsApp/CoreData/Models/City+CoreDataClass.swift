@@ -32,10 +32,28 @@ public class City: AbstractCity {
         if let cityState = city.state {
             cityManagedObject.state = cityState
         }
+        if let cityCountry = city.country {
+            cityManagedObject.country = cityCountry
+        }
         if let cityLongLat = city.coord {
             let longLatManagedObject = NSEntityDescription.insertNewObject(forEntityName: "Coordinates", into: context) as! Coordinates
             longLatManagedObject.longitude = cityLongLat.lon
             longLatManagedObject.latitude = cityLongLat.lat
         }
+    }
+
+    class func searchFor(_ city: String, with context: NSManagedObjectContext) -> [City]? {
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "City")
+        fetchRequest.predicate = NSPredicate(format: "name == %@", city)
+        var citiesFound = [NSManagedObject]()
+        do {
+            if let cities: [NSManagedObject] = try context.fetch(fetchRequest) {
+                citiesFound = cities
+            }
+
+        } catch {
+            return nil
+        }
+        return citiesFound as? [City]
     }
 }

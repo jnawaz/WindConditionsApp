@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  ViewController+Utils.swift
 //  WindConditionsApp
 //
 //  Created by Jamil Nawaz on 06/08/2020.
@@ -10,11 +10,9 @@ import UIKit
 
 extension UIViewController {
     func showLoadingIndicatorView() {
-        //TODO: Implement indicator
     }
 
     func hideLoadingIndicatorView() {
-        //TODO: Implement indicator
     }
 }
 
