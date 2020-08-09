@@ -16,6 +16,7 @@ class FavouriteLocationViewController: UIViewController, FavouriteLocationViewDe
     @IBOutlet var addNewCityInstructionBody: UILabel!
 
     var presenter: FavouriteLocationPresenter?
+    var searchCityResults: [City] = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,14 +58,16 @@ class FavouriteLocationViewController: UIViewController, FavouriteLocationViewDe
 //MARK: - UISearchBar Methods
 extension FavouriteLocationViewController: UISearchBarDelegate {
     public func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
-        //TODO: Implement search
+        presenter?.searchFor(city: searchText, completionHandler: { cities in
+            self.searchCityResults = cities
+        })
     }
 }
 
 // MARK: - UITableView Methods
 extension FavouriteLocationViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return self.searchCityResults.count
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {

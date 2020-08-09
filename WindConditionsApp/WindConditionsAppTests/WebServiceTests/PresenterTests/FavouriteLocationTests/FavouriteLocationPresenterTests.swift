@@ -14,6 +14,7 @@ class FavouriteLocationPresenterTests: XCTestCase {
 
     var viewDelegate = FavouriteLocationViewDelegateSpy()
     let testContext = CoreDataTestStack().mainContext
+    let notExpectingToFail = "Shouldn't fail here"
 
     func testOnViewDidLoadNoCitiesShouldShowEmptyFavourtiesView() {
         CoreDataTestStack().clearCoreDataStore()
@@ -29,7 +30,7 @@ class FavouriteLocationPresenterTests: XCTestCase {
         do {
             try testContext.save()
         } catch {
-            XCTFail("Shouldn't fail here")
+            XCTFail(self.notExpectingToFail)
         }
 
         let presenter = FavouriteLocationPresenter(viewDelegate: viewDelegate, managedObjectContext: testContext)
@@ -52,7 +53,7 @@ class FavouriteLocationPresenterTests: XCTestCase {
         do {
             try testContext.save()
         } catch {
-            XCTFail("Shouldn't fail here")
+            XCTFail(self.notExpectingToFail)
         }
 
         let presenter = FavouriteLocationPresenter(viewDelegate: viewDelegate, managedObjectContext: testContext)
@@ -68,13 +69,33 @@ class FavouriteLocationPresenterTests: XCTestCase {
         do {
             try testContext.save()
         } catch {
-            XCTFail("Shouldn't fail here")
+            XCTFail(self.notExpectingToFail)
         }
 
         let presenter = FavouriteLocationPresenter(viewDelegate: viewDelegate, managedObjectContext: testContext)
         presenter.viewDidLoad()
 
         XCTAssertTrue(viewDelegate.shouldShowFavouritesView)
+    }
 
+    func testOnSearchForCityAndCityIsFoundShouldReturnCity() {
+        let expectation = XCTestExpectation()
+        CoreDataTestStack().clearCoreDataStore()
+        let city = NSEntityDescription.insertNewObject(forEntityName: "City", into: testContext) as! City
+        city.name = "test"
+
+        do {
+            try testContext.save()
+        } catch {
+            XCTFail(self.notExpectingToFail)
+        }
+
+        let presenter = FavouriteLocationPresenter(viewDelegate: viewDelegate, managedObjectContext: testContext)
+        presenter.searchFor(city: "test", completionHandler: { cities in
+            XCTAssertNotNil(cities)
+            expectation.fulfill()
+        })
+
+        wait(for: [expectation], timeout: 5.0)
     }
 }

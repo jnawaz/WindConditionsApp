@@ -38,4 +38,19 @@ public class City: AbstractCity {
             longLatManagedObject.latitude = cityLongLat.lat
         }
     }
+
+    class func searchFor(_ city: String, with context: NSManagedObjectContext) -> [City]? {
+        let fetchRequest = NSFetchRequest<NSManagedObject>(entityName: "City")
+        fetchRequest.predicate = NSPredicate(format: "name == %@", city)
+        var citiesFound = [NSManagedObject]()
+        do {
+            if let cities: [NSManagedObject] = try context.fetch(fetchRequest) {
+                citiesFound = cities
+            }
+
+        } catch {
+            return nil
+        }
+        return citiesFound as? [City]
+    }
 }

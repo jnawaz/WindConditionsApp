@@ -15,7 +15,8 @@ class FavouriteLocationPresenter: NSObject {
     let filename = "citylist"
     let filetype = "json"
 
-    init(viewDelegate: FavouriteLocationViewDelegate, managedObjectContext: NSManagedObjectContext) {
+    init(viewDelegate: FavouriteLocationViewDelegate,
+         managedObjectContext: NSManagedObjectContext) {
         super.init()
         self.viewDelegate = viewDelegate
         self.managedObjectContext = managedObjectContext
@@ -51,6 +52,17 @@ class FavouriteLocationPresenter: NSObject {
                 try coreDataContext.save()
             } catch {
                 fatalError("Failed to save cities")
+            }
+        }
+    }
+
+    func searchFor(city: String, completionHandler: @escaping ([City]) -> Void) {
+        if let coreDataContext = managedObjectContext {
+            let searchedCities = City.searchFor(city, with: coreDataContext)
+            if let searchCityResult = searchedCities {
+                if !searchCityResult.isEmpty {
+                    completionHandler(searchCityResult)
+                }
             }
         }
     }

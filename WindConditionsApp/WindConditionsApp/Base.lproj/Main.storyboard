@@ -34,16 +34,16 @@
                                         <rect key="frame" x="0.0" y="56" width="414" height="762"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="MEL-Od-hov">
-                                                <rect key="frame" x="0.0" y="354.5" width="414" height="53"/>
+                                                <rect key="frame" x="12" y="354.5" width="390" height="53"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;Add city title&gt;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vT9-rj-mGq">
-                                                        <rect key="frame" x="0.0" y="0.0" width="414" height="20.5"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="390" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;Add city instruction body&gt;" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3mR-tp-ygC">
-                                                        <rect key="frame" x="0.0" y="32.5" width="414" height="20.5"/>
+                                                        <rect key="frame" x="0.0" y="32.5" width="390" height="20.5"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -54,8 +54,8 @@
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <constraints>
                                             <constraint firstItem="MEL-Od-hov" firstAttribute="centerX" secondItem="Z3I-0d-D86" secondAttribute="centerX" id="3M5-j4-kkT"/>
-                                            <constraint firstAttribute="trailing" secondItem="MEL-Od-hov" secondAttribute="trailing" id="EF0-2r-9cf"/>
-                                            <constraint firstItem="MEL-Od-hov" firstAttribute="leading" secondItem="Z3I-0d-D86" secondAttribute="leading" id="dz7-6W-Cv2"/>
+                                            <constraint firstAttribute="trailing" secondItem="MEL-Od-hov" secondAttribute="trailing" constant="12" id="EF0-2r-9cf"/>
+                                            <constraint firstItem="MEL-Od-hov" firstAttribute="leading" secondItem="Z3I-0d-D86" secondAttribute="leading" constant="12" id="dz7-6W-Cv2"/>
                                             <constraint firstItem="MEL-Od-hov" firstAttribute="centerY" secondItem="Z3I-0d-D86" secondAttribute="centerY" id="yoc-dP-TDR"/>
                                         </constraints>
                                     </view>
