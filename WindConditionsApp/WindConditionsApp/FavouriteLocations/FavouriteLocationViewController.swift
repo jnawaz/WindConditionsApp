@@ -73,6 +73,7 @@ extension FavouriteLocationViewController: UISearchBarDelegate {
             if let citiesResult = cities {
                 self.searchCityResults = citiesResult
                 self.noFavouritesSearchTableView.reloadData()
+                self.addNewCityInstructionView.isHidden = true
             }
         })
     }
@@ -92,7 +93,9 @@ extension FavouriteLocationViewController: UITableViewDataSource, UITableViewDel
         }
 
         var labelText = ""
-        guard var city = searchCityResults?[indexPath.row] else { return UITableViewCell() }
+        guard var city = searchCityResults?[indexPath.row] else {
+            return UITableViewCell()
+        }
         cell?.setLabel(with: city)
 
         return cell!
@@ -110,5 +113,15 @@ extension FavouriteLocationViewController: UITableViewDataSource, UITableViewDel
 
     public func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+
+        let selectedCity = searchCityResults![indexPath.row]
+
+        if let coordinates = selectedCity.coordinates {
+            CityDetailsConfiguration(lat: String(coordinates.latitude), lon: String(coordinates.latitude), exclude: "minutely,hourly")
+            .start { response in
+                print("got the response")
+            }
+        }
+
     }
 }
