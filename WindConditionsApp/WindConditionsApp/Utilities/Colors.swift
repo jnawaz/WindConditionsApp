@@ -9,10 +9,14 @@ import UIKit
 private struct ReferenceColors {
 
     static let lavender = UIColor("#E6EEF9")
+    static let slateGrey = UIColor("#717892")
+    static let darkGreen = UIColor("#010312")
 }
 
 struct Colors {
     static let emptyFavouritesBackground = ReferenceColors.lavender
+    static let launchScreenBackground = ReferenceColors.lavender
+    static let noFavouritesSearchBarTint = ReferenceColors.darkGreen
 }
 
 extension UIColor {
