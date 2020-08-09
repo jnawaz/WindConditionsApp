@@ -8,13 +8,13 @@
 
 import UIKit
 
-class ViewController: UIViewController {
-
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view.
+extension UIViewController {
+    func showLoadingIndicatorView() {
+        //TODO: Implement indicator
     }
 
-
+    func hideLoadingIndicatorView() {
+        //TODO: Implement indicator
+    }
 }
 

@@ -14,6 +14,7 @@ class FavouriteLocationViewController: UIViewController, FavouriteLocationViewDe
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter = FavouriteLocationPresenter(viewDelegate: self, managedObjectContext: CoreDataStack().mainContext)
+        presenter?.viewDidLoad()
     }
 
     //MARK: - View Delegate Methods
@@ -27,10 +28,10 @@ class FavouriteLocationViewController: UIViewController, FavouriteLocationViewDe
     }
 
     func showLoadingIndicator() {
-        //TODO: Implement method
+        self.showLoadingIndicatorView()
     }
 
     func hideLoadingIndicator() {
-        //TODO: Implement method
+        self.hideLoadingIndicatorView()
     }
 }
