@@ -60,6 +60,7 @@ extension FavouriteLocationViewController: UISearchBarDelegate {
     public func searchBar(_ searchBar: UISearchBar, textDidChange searchText: String) {
         presenter?.searchFor(city: searchText, completionHandler: { cities in
             self.searchCityResults = cities
+            self.noFavouritesSearchTableView.reloadData()
         })
     }
 }
@@ -71,6 +72,16 @@ extension FavouriteLocationViewController: UITableViewDataSource, UITableViewDel
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        let reuseIdentifier = CitySearchResultCell.identifier
+        var cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier) as? CitySearchResultCell
+        if cell == nil {
+            cell = CitySearchResultCell(style: .default, reuseIdentifier: reuseIdentifier) as CitySearchResultCell
+        }
+
+        var labelText = ""
+        var city = searchCityResults[indexPath.row]
+        cell?.setLabel(with: city)
+
+        return cell!
     }
 }
