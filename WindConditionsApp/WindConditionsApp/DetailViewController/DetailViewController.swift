@@ -8,23 +8,24 @@
 
 import UIKit
 
-class DetailViewController: UIViewController {
+class DetailViewController: UIViewController, DetailViewDelegate {
+
+    var presenter: DetailPresenter?
+
+    var city: City!
+    var apiResponse: CityDetailsResponse!
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        presenter = DetailPresenter(viewDelegate: self, managedObjectContext: CoreDataStack().mainContext)
+        setupUI()
     }
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    private func setupUI() {
+        if let cityName = city.name {
+            self.title = cityName
+        }
+        self.view.backgroundColor = Colors.detailViewBackgroundColor
     }
-    */
 
 }

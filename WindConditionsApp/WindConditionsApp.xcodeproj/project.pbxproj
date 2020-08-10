@@ -13,6 +13,7 @@
 		6037921E04ED1F45C5B628A7 /* Montserrat-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 6037904D9F3D8424D3EBBA2F /* Montserrat-ExtraBold.ttf */; };
 		6037922C4BD4A998CF079ED9 /* WebServiceConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60379A436F01581B9FEDC684 /* WebServiceConfiguration.swift */; };
 		60379263DA9AA17A692FEE26 /* FavouriteLocationViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6037949CC805625AA2ECED1A /* FavouriteLocationViewDelegate.swift */; };
+		6037926E485F84CC8B2B70E8 /* Storyboard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60379244BB173993826E631D /* Storyboard.swift */; };
 		6037927B16B7BD1F65E2FB45 /* Montserrat-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 60379935B5A22836C8F65849 /* Montserrat-Black.ttf */; };
 		6037930D53BFA8E3364FFFFF /* Localization.swift in Sources */ = {isa = PBXBuildFile; fileRef = 603794D15EC87A3061BD5992 /* Localization.swift */; };
 		60379338B8B6EDB6CFC14046 /* CoreDataTestStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60379EFA945577703AB3B073 /* CoreDataTestStack.swift */; };
@@ -57,7 +58,6 @@
 		8DE4BF1824DC623F001CD608 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DE4BF1624DC623F001CD608 /* Main.storyboard */; };
 		8DE4BF1B24DC623F001CD608 /* WindConditionsApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 8DE4BF1924DC623F001CD608 /* WindConditionsApp.xcdatamodeld */; };
 		8DE4BF1D24DC6242001CD608 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8DE4BF1C24DC6242001CD608 /* Assets.xcassets */; };
-		8DE4BF2024DC6242001CD608 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8DE4BF1E24DC6242001CD608 /* LaunchScreen.storyboard */; };
 		8DE4BF2B24DC6242001CD608 /* WindConditionsAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8DE4BF2A24DC6242001CD608 /* WindConditionsAppTests.swift */; };
 		B93B6341DB1C7798B40B872E /* Pods_WindConditionsAppTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 09FF2621CC869878E7B2B14E /* Pods_WindConditionsAppTests.framework */; };
 		EE64161342F87B562CA2E1E9 /* Pods_WindConditionsApp.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5159DD2672CEA75DB06353AC /* Pods_WindConditionsApp.framework */; };
@@ -82,6 +82,7 @@
 		6037913764042762804BD1D7 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		6037914373907D9C4470F167 /* Montserrat-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file.ttf; path = "Montserrat-Italic.ttf"; sourceTree = "<group>"; };
 		6037921653697C11A7696F25 /* FavouriteLocationViewDelegateSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouriteLocationViewDelegateSpy.swift; sourceTree = "<group>"; };
+		60379244BB173993826E631D /* Storyboard.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Storyboard.swift; sourceTree = "<group>"; };
 		60379272799AF35996D2ABFE /* ViewController+Utils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "ViewController+Utils.swift"; sourceTree = "<group>"; };
 		603792CC0D0137E3694F7F80 /* DetailViewDelegateSpy.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewDelegateSpy.swift; sourceTree = "<group>"; };
 		603792EE5223DA16EEBE242C /* FavouriteLocationPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavouriteLocationPresenter.swift; sourceTree = "<group>"; };
@@ -127,7 +128,6 @@
 		8DE4BF1724DC623F001CD608 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		8DE4BF1A24DC623F001CD608 /* WindConditionsApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = WindConditionsApp.xcdatamodel; sourceTree = "<group>"; };
 		8DE4BF1C24DC6242001CD608 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		8DE4BF1F24DC6242001CD608 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8DE4BF2124DC6242001CD608 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8DE4BF2624DC6242001CD608 /* WindConditionsAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WindConditionsAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8DE4BF2A24DC6242001CD608 /* WindConditionsAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WindConditionsAppTests.swift; sourceTree = "<group>"; };
@@ -166,7 +166,6 @@
 				CE276429E76AF127286D6596 /* Pods-WindConditionsAppTests.debug.xcconfig */,
 				FB44F5CC39979066444CE5E6 /* Pods-WindConditionsAppTests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -235,6 +234,7 @@
 				603794D15EC87A3061BD5992 /* Localization.swift */,
 				60379272799AF35996D2ABFE /* ViewController+Utils.swift */,
 				60379AA3610AB06F0820D98E /* Fonts.swift */,
+				60379244BB173993826E631D /* Storyboard.swift */,
 			);
 			path = Utilities;
 			sourceTree = "<group>";
@@ -387,7 +387,6 @@
 				8DE4BF1224DC623F001CD608 /* SceneDelegate.swift */,
 				8DE4BF1624DC623F001CD608 /* Main.storyboard */,
 				8DE4BF1C24DC6242001CD608 /* Assets.xcassets */,
-				8DE4BF1E24DC6242001CD608 /* LaunchScreen.storyboard */,
 				8DE4BF2124DC6242001CD608 /* Info.plist */,
 				60379A5C32E32201C5AE4297 /* WebServices */,
 				6037913764042762804BD1D7 /* Constants.swift */,
@@ -503,7 +502,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				8DCEF9B824E04B3500F2065D /* Localizable.strings in Resources */,
-				8DE4BF2024DC6242001CD608 /* LaunchScreen.storyboard in Resources */,
 				8DE4BF1D24DC6242001CD608 /* Assets.xcassets in Resources */,
 				8DCEF97424DF024400F2065D /* citylist.json in Resources */,
 				8DE4BF1824DC623F001CD608 /* Main.storyboard in Resources */,
@@ -609,6 +607,7 @@
 				603790EBBA57A24ED6D3DA99 /* DetailPresenter.swift in Sources */,
 				60379C66592AB2B4260B6827 /* DetailViewDelegate.swift in Sources */,
 				6037983E9902E44F92FA2CA1 /* CityDetailsConfiguration.swift in Sources */,
+				6037926E485F84CC8B2B70E8 /* Storyboard.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -645,14 +644,6 @@
 				8DE4BF1724DC623F001CD608 /* Base */,
 			);
 			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		8DE4BF1E24DC6242001CD608 /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				8DE4BF1F24DC6242001CD608 /* Base */,
-			);
-			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
