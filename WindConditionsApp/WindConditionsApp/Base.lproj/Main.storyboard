@@ -197,6 +197,11 @@
                         <viewLayoutGuide key="safeArea" id="4Cj-Ho-O4L"/>
                     </view>
                     <navigationItem key="navigationItem" id="qHi-A4-HjP"/>
+                    <connections>
+                        <outlet property="dateLabel" destination="WfI-zf-LTV" id="Rb8-Lc-vAQ"/>
+                        <outlet property="windDirectionImage" destination="fC4-Re-t3c" id="aCS-J0-pgm"/>
+                        <outlet property="windDirectionLabel" destination="txU-g2-bir" id="N7L-If-oaH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cr9-zh-tJD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

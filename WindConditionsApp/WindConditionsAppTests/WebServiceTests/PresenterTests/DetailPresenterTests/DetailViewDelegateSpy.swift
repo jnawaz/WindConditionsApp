@@ -4,6 +4,7 @@
 //
 
 import Foundation
+@testable import WindConditionsApp
 
 class DetailViewDelegateSpy: DetailViewDelegate {
 

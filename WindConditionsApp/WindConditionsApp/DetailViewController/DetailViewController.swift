@@ -10,6 +10,10 @@ import UIKit
 
 class DetailViewController: UIViewController, DetailViewDelegate {
 
+    @IBOutlet var dateLabel: UILabel!
+    @IBOutlet var windDirectionImage: UIImageView!
+    @IBOutlet var windDirectionLabel: UILabel!
+
     var presenter: DetailPresenter?
 
     var city: City!
@@ -26,6 +30,9 @@ class DetailViewController: UIViewController, DetailViewDelegate {
             self.title = cityName
         }
         self.view.backgroundColor = Colors.detailViewBackgroundColor
+        setDateLabel()
     }
 
+    private func setDateLabel() {
+    }
 }
