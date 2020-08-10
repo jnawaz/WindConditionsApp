@@ -33,7 +33,7 @@ class DetailViewController: UIViewController, DetailViewDelegate {
         setDateLabel()
         setWindDirectionLabel()
         transformWindDirectionImage()
-        // Setup 5 day forecast view
+        //TODO: Setup 5 day forecast view
     }
 
     private func transformWindDirectionImage() {
