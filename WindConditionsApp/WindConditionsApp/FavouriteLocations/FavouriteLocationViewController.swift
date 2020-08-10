@@ -20,6 +20,9 @@ class FavouriteLocationViewController: UIViewController, FavouriteLocationViewDe
     var presenter: FavouriteLocationPresenter?
     var searchCityResults: [City]?
 
+    var selectedCity: City?
+    var selectedCityAPIResponse: CityDetailsResponse?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         presenter = FavouriteLocationPresenter(viewDelegate: self, managedObjectContext: CoreDataStack().mainContext)
@@ -60,7 +63,6 @@ class FavouriteLocationViewController: UIViewController, FavouriteLocationViewDe
     func showAddCityInstructionView() {
         self.view.bringSubviewToFront(self.addNewCityInstructionView)
     }
-
 }
 
 //MARK: - UISearchBar Methods
@@ -117,11 +119,30 @@ extension FavouriteLocationViewController: UITableViewDataSource, UITableViewDel
         let selectedCity = searchCityResults![indexPath.row]
 
         if let coordinates = selectedCity.coordinates {
-            CityDetailsConfiguration(lat: String(coordinates.latitude), lon: String(coordinates.latitude), exclude: "minutely,hourly")
-            .start { response in
-                print("got the response")
-            }
+            CityDetailsConfiguration(lat: String(coordinates.latitude), lon: String(coordinates.longitude), exclude: "minutely,hourly")
+                    .start { result in
+                        switch result {
+                        case .success(let apiResponse):
+                            self.selectedCity = selectedCity
+                            self.selectedCityAPIResponse = apiResponse
+                            self.performSegue(withIdentifier: Segue.showDetail.rawValue, sender: nil)
+                        case .failure:
+                            //TODO: Show Error Dialog
+                            print("hello")
+                        }
+                    }
         }
 
+    }
+}
+
+//MARK: - Navigation
+extension FavouriteLocationViewController {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.destination is DetailViewController {
+            let detailViewController = segue.destination as! DetailViewController
+            detailViewController.apiResponse = self.selectedCityAPIResponse
+            detailViewController.city = self.selectedCity
+        }
     }
 }
