@@ -7,4 +7,7 @@ import Foundation
 
 extension Date {
 
+    public func toShortFormat() -> String {
+
+    }
 }
