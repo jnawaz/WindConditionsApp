@@ -30,7 +30,7 @@ class DateTests: XCTestCase {
 
         let dateString = date.toShortFormat()
 
-        XCTAssertEqual(dateString, "10th August 2020")
+        XCTAssertEqual(dateString, "10-8-2020")
     }
 
 }

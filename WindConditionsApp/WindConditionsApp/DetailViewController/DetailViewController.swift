@@ -34,5 +34,9 @@ class DetailViewController: UIViewController, DetailViewDelegate {
     }
 
     private func setDateLabel() {
+        if let currentDate = self.apiResponse.current?.dt {
+            let date = Date(timeIntervalSince1970: TimeInterval(currentDate))
+            self.dateLabel.text = date.toShortFormat()
+        }
     }
 }

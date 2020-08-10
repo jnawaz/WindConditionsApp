@@ -7,7 +7,16 @@ import Foundation
 
 extension Date {
 
-    public func toShortFormat() -> String {
+    var calendar: Calendar {
+        return NSCalendar.current
+    }
 
+    public func toShortFormat() -> String {
+        var dateString = ""
+
+        let dateComponents = calendar.dateComponents([.day, .month, .year], from: self)
+        dateString = "\(dateComponents.day!)-\(dateComponents.month!)-\(dateComponents.year!)"
+
+        return dateString
     }
 }
