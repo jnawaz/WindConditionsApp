@@ -18,14 +18,13 @@ struct CityDetailsConfiguration: WebServiceConfiguration {
     var queryParameters: [URLQueryItem]? {
         guard let lat = lat,
               let lon = lon,
-              let exclude = exclude else {
-            return nil
-        }
+              let exclude = exclude else { return nil }
 
         return [
             URLQueryItem(name: "lat", value: lat),
             URLQueryItem(name: "lon", value: lon),
-            URLQueryItem(name: "lat", value: exclude)
+            URLQueryItem(name: "exclude", value: exclude),
+            URLQueryItem(name: "appId", value: apiKey)
         ]
     }
 
@@ -35,7 +34,7 @@ struct CityDetailsResponse: Decodable {
     let lat: Float?
     let lon: Float?
     let timezone: String?
-    let timezone_offset: String?
+    let timezone_offset: Int?
     let current: Forecast?
     let daily: [DailyBreakdown]?
 }
@@ -48,13 +47,13 @@ struct Forecast: Decodable {
     let feels_like: Float?
     let pressure: Int?
     let humidity: Int?
-    let dew_point: Int?
+    let dew_point: Float?
     let uvi: Float?
     let clouds: Int?
     let visibility: Int?
     let wind_speed: Float?
     let wind_deg: Int?
-    let weather: Weather?
+    let weather: [Weather]?
 }
 
 struct Weather: Decodable {
@@ -77,7 +76,7 @@ struct DailyBreakdown: Decodable {
     let wind_deg: Int?
     let weather: [WeatherDescription]?
     let clouds: Int?
-    let pop: Int?
+    let pop: Float?
     let uvi: Float?
 }
 
