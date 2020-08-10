@@ -31,6 +31,17 @@ class DetailViewController: UIViewController, DetailViewDelegate {
         }
         self.view.backgroundColor = Colors.detailViewBackgroundColor
         setDateLabel()
+        setWindDirectionLabel()
+        transformWindDirectionImage()
+        // Setup 5 day forecast view
+    }
+
+    private func transformWindDirectionImage() {
+        self.windDirectionImage.transform = CGAffineTransform(rotationAngle: self.apiResponse.current?.windRotationAngle() ?? 0)
+    }
+
+    private func setWindDirectionLabel() {
+        self.windDirectionLabel.text = self.apiResponse.current?.windDegreesFormatted()
     }
 
     private func setDateLabel() {

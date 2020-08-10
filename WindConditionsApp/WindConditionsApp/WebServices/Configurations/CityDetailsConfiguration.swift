@@ -4,6 +4,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct CityDetailsConfiguration: WebServiceConfiguration {
     typealias Response = CityDetailsResponse
@@ -46,6 +47,7 @@ struct Forecast: Decodable {
     let temp: Float?
     let feels_like: Float?
     let pressure: Int?
+
     let humidity: Int?
     let dew_point: Float?
     let uvi: Float?
@@ -54,6 +56,21 @@ struct Forecast: Decodable {
     let wind_speed: Float?
     let wind_deg: Int?
     let weather: [Weather]?
+
+    func windDegreesFormatted() -> String {
+        if let windDegrees = wind_deg {
+            return String(windDegrees) + "°"
+        }
+        return ""
+    }
+
+    func windRotationAngle() -> CGFloat {
+        if let windDegrees = wind_deg {
+            let northPoint:CGFloat = 360.0
+            return northPoint - CGFloat(windDegrees)
+        }
+        return .zero
+    }
 }
 
 struct Weather: Decodable {
