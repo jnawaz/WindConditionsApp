@@ -10,9 +10,11 @@ import UIKit
 
 extension UIViewController {
     func showLoadingIndicatorView() {
+        /* Haven't implemented spinner based on loading screen performance issue - detailed in cover note */
     }
 
     func hideLoadingIndicatorView() {
+        /* Haven't implemented spinner based on loading screen performance issue - detailed in cover note */
     }
 }
 
