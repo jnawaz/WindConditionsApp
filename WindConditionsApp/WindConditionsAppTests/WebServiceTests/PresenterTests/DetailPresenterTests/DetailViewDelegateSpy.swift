@@ -7,5 +7,16 @@ import Foundation
 @testable import WindConditionsApp
 
 class DetailViewDelegateSpy: DetailViewDelegate {
+    var failToSave = false
+    var successfullySave = false
+
+    
+    func failedToSave() {
+        failToSave = true
+    }
+    
+    func successfullySaved() {
+        successfullySave = true
+    }
 
 }

@@ -20,6 +20,7 @@ class FavouriteLocationViewDelegateSpy: FavouriteLocationViewDelegate {
     var shouldShowFavouritesView = false
     var shouldShowAddCityInstructionView = false
     var showsFavouriteCities = false
+    var shouldShowFavouritesViewWithCities = false
 
     func showEmptyFavouritesView() {
         shouldShowEmptyFavouritesView = true
@@ -46,6 +47,6 @@ class FavouriteLocationViewDelegateSpy: FavouriteLocationViewDelegate {
     }
 
     func showFavouritesView(favCities: [FavouriteCities]) {
-        showsFavouriteCities = true
+        shouldShowFavouritesViewWithCities = true
     }
 }

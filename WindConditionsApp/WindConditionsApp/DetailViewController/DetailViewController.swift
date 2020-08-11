@@ -105,6 +105,6 @@ extension DetailViewController: DetailViewDelegate {
 // Mark: - Actions
 extension DetailViewController {
     @IBAction func pressedAddToFavourites() {
-        presenter?.addToFavourites(self.city as! City)
+        presenter?.addToFavourites(self.city as? City)
     }
 }

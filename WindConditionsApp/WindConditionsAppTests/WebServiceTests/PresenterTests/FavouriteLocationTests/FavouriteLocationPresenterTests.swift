@@ -75,7 +75,7 @@ class FavouriteLocationPresenterTests: XCTestCase {
         let presenter = FavouriteLocationPresenter(viewDelegate: viewDelegate, managedObjectContext: testContext)
         presenter.viewWillAppear()
 
-        XCTAssertTrue(viewDelegate.shouldShowFavouritesView)
+        XCTAssertTrue(viewDelegate.shouldShowFavouritesViewWithCities)
     }
 
     func testOnSearchForCityAndCityIsFoundShouldReturnCity() {
