@@ -19,7 +19,9 @@ struct CityDetailsConfiguration: WebServiceConfiguration {
     var queryParameters: [URLQueryItem]? {
         guard let lat = lat,
               let lon = lon,
-              let exclude = exclude else { return nil }
+              let exclude = exclude else {
+            return nil
+        }
 
         return [
             URLQueryItem(name: "lat", value: lat),
@@ -66,7 +68,10 @@ struct Forecast: Decodable {
 
     func windRotationAngle() -> CGFloat {
         if let windDegrees = wind_deg {
-            let northPoint:CGFloat = 360.0
+            let northPoint: CGFloat = 360.0
+            if windDegrees == 0 {
+                return northPoint
+            }
             return northPoint - CGFloat(windDegrees)
         }
         return .zero
@@ -95,6 +100,31 @@ struct DailyBreakdown: Decodable {
     let clouds: Int?
     let pop: Float?
     let uvi: Float?
+
+    func windSpeedFormatted() -> String? {
+        if let windSpeed = wind_speed {
+            let speed = String(windSpeed)
+            return speed
+        }
+        return ""
+    }
+
+    func windDegreesFormatted() -> String? {
+        if let windDegrees = wind_deg {
+            return String(windDegrees) + "°"
+        }
+        return ""
+    }
+
+
+    func dateAsShortFormat() -> String? {
+        if let dailyDate = dt {
+            let date = Date(timeIntervalSince1970: TimeInterval(dailyDate))
+            return date.toShortFormat()
+        }
+
+        return ""
+    }
 }
 
 struct DailyTemperatures: Decodable {
