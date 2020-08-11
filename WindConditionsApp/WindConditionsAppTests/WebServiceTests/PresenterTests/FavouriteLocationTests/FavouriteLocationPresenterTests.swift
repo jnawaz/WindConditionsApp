@@ -19,7 +19,7 @@ class FavouriteLocationPresenterTests: XCTestCase {
     func testOnViewDidLoadNoCitiesShouldShowEmptyFavourtiesView() {
         CoreDataTestStack().clearCoreDataStore()
         let presenter = FavouriteLocationPresenter(viewDelegate: viewDelegate, managedObjectContext: testContext)
-        presenter.viewDidLoad()
+        presenter.viewWillAppear()
 
         XCTAssertTrue(viewDelegate.shouldShowEmptyFavouritesView)
     }
@@ -34,7 +34,7 @@ class FavouriteLocationPresenterTests: XCTestCase {
         }
 
         let presenter = FavouriteLocationPresenter(viewDelegate: viewDelegate, managedObjectContext: testContext)
-        presenter.viewDidLoad()
+        presenter.viewWillAppear()
 
         XCTAssertTrue(viewDelegate.shouldHideEmptyFavouritesView)
     }
@@ -42,7 +42,7 @@ class FavouriteLocationPresenterTests: XCTestCase {
     func testOnViewDidLoadWhilstPopulatingCityDataShowsLoadingIndicatorView() {
         CoreDataTestStack().clearCoreDataStore()
         let presenter = FavouriteLocationPresenter(viewDelegate: viewDelegate, managedObjectContext: testContext)
-        presenter.viewDidLoad()
+        presenter.viewWillAppear()
 
         XCTAssertTrue(viewDelegate.shouldShowLoadingIndicator)
     }
@@ -57,7 +57,7 @@ class FavouriteLocationPresenterTests: XCTestCase {
         }
 
         let presenter = FavouriteLocationPresenter(viewDelegate: viewDelegate, managedObjectContext: testContext)
-        presenter.viewDidLoad()
+        presenter.viewWillAppear()
 
         XCTAssertFalse(viewDelegate.shouldShowLoadingIndicator)
     }
@@ -73,9 +73,9 @@ class FavouriteLocationPresenterTests: XCTestCase {
         }
 
         let presenter = FavouriteLocationPresenter(viewDelegate: viewDelegate, managedObjectContext: testContext)
-        presenter.viewDidLoad()
+        presenter.viewWillAppear()
 
-        XCTAssertTrue(viewDelegate.shouldShowFavouritesView)
+        XCTAssertTrue(viewDelegate.shouldShowFavouritesViewWithCities)
     }
 
     func testOnSearchForCityAndCityIsFoundShouldReturnCity() {

@@ -10,3 +10,4 @@ let apiBase = "https://api.openweathermap.org/data/2.5/"
 // OpenWeather API |
 // ----------------'
 let apiBaseUrl = URL(string: apiBase)!
+let apiKey = "f91508b45e9ef3a7237cedd33ebe67cf"

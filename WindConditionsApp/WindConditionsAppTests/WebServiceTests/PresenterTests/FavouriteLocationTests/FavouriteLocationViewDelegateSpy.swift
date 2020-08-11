@@ -9,12 +9,18 @@
 import UIKit
 
 class FavouriteLocationViewDelegateSpy: FavouriteLocationViewDelegate {
+    func showSearchResultsTable() {
+
+    }
+
     var shouldShowEmptyFavouritesView = false
     var shouldHideEmptyFavouritesView = false
     var shouldShowLoadingIndicator = false
     var shouldHideLoadingIndicator = false
     var shouldShowFavouritesView = false
     var shouldShowAddCityInstructionView = false
+    var showsFavouriteCities = false
+    var shouldShowFavouritesViewWithCities = false
 
     func showEmptyFavouritesView() {
         shouldShowEmptyFavouritesView = true
@@ -38,5 +44,9 @@ class FavouriteLocationViewDelegateSpy: FavouriteLocationViewDelegate {
 
     func showAddCityInstructionView() {
         shouldShowAddCityInstructionView = true
+    }
+
+    func showFavouritesView(favCities: [FavouriteCities]) {
+        shouldShowFavouritesViewWithCities = true
     }
 }

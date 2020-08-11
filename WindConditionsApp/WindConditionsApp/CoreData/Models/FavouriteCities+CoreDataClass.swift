@@ -23,4 +23,14 @@ public class FavouriteCities: AbstractCity {
         }
         return favouriteCities > 0
     }
+
+    class func all(with context: NSManagedObjectContext) -> [FavouriteCities]? {
+        var favouriteCitiesRequest = NSFetchRequest<NSManagedObject>(entityName: "FavouriteCities")
+        do {
+            let favouriteCities = try context.fetch(favouriteCitiesRequest) as? [FavouriteCities]
+            return favouriteCities
+        } catch {
+            fatalError("Failed to fetch Favourite cities")
+        }
+    }
 }

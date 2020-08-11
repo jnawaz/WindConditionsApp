@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="16096" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Ae0-mP-3m7">
-    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <device id="retina4_0" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="16086"/>
@@ -17,6 +17,9 @@
         <array key="Montserrat-Medium.ttf">
             <string>Montserrat-Medium</string>
         </array>
+        <array key="Montserrat-SemiBold.ttf">
+            <string>Montserrat-SemiBold</string>
+        </array>
     </customFonts>
     <scenes>
         <!--Favourite Location View Controller-->
@@ -24,32 +27,32 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="FavouriteLocationViewController" customModule="WindConditionsApp" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="lM8-83-5Pr" userLabel="EmptyFavouritesView">
-                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
+                                <rect key="frame" x="0.0" y="44" width="320" height="524"/>
                                 <subviews>
                                     <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="iGu-FC-RFD">
-                                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="56"/>
                                         <textInputTraits key="textInputTraits"/>
                                         <connections>
                                             <outlet property="delegate" destination="BYZ-38-t0r" id="zRH-MX-SvA"/>
                                         </connections>
                                     </searchBar>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="CnR-YA-OjM">
-                                        <rect key="frame" x="0.0" y="56" width="414" height="718"/>
+                                        <rect key="frame" x="0.0" y="56" width="320" height="468"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="SearchCell" id="cHR-hS-fyQ" customClass="CitySearchResultCell" customModule="WindConditionsApp" customModuleProvider="target">
-                                                <rect key="frame" x="0.0" y="55.5" width="414" height="70"/>
+                                                <rect key="frame" x="0.0" y="55.5" width="320" height="70"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="cHR-hS-fyQ" id="6T2-JK-DXv">
-                                                    <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="70"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;City name, State&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rml-iY-lPB">
-                                                            <rect key="frame" x="12" y="0.0" width="390" height="70"/>
+                                                            <rect key="frame" x="12" y="0.0" width="296" height="70"/>
                                                             <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="18"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
@@ -73,19 +76,19 @@
                                         </connections>
                                     </tableView>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Z3I-0d-D86" userLabel="AddNewCityInstructionView">
-                                        <rect key="frame" x="0.0" y="56" width="414" height="718"/>
+                                        <rect key="frame" x="0.0" y="56" width="320" height="468"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="MEL-Od-hov">
-                                                <rect key="frame" x="12" y="328.5" width="390" height="61"/>
+                                                <rect key="frame" x="12" y="203.5" width="296" height="61"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;Add city title&gt;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vT9-rj-mGq">
-                                                        <rect key="frame" x="0.0" y="0.0" width="390" height="27"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="296" height="27"/>
                                                         <fontDescription key="fontDescription" name="Montserrat-Black" family="Montserrat" pointSize="22"/>
                                                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;Add city instruction body&gt;" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3mR-tp-ygC">
-                                                        <rect key="frame" x="0.0" y="39" width="390" height="22"/>
+                                                        <rect key="frame" x="0.0" y="39" width="296" height="22"/>
                                                         <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="18"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
@@ -101,13 +104,52 @@
                                             <constraint firstItem="MEL-Od-hov" firstAttribute="centerY" secondItem="Z3I-0d-D86" secondAttribute="centerY" id="yoc-dP-TDR"/>
                                         </constraints>
                                     </view>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="grouped" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="18" sectionFooterHeight="18" translatesAutoresizingMaskIntoConstraints="NO" id="X8b-04-VAj">
+                                        <rect key="frame" x="0.0" y="56" width="320" height="468"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AddedFavouriteCell" rowHeight="80" id="6AC-8e-xP5" customClass="AddedFavouritesCell" customModule="WindConditionsApp" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="55.5" width="320" height="80"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6AC-8e-xP5" id="aaO-D2-nmk">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="80"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;City Name&gt;" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="o2q-mc-1JW">
+                                                            <rect key="frame" x="27" y="12" width="266" height="56"/>
+                                                            <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="22"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailingMargin" secondItem="o2q-mc-1JW" secondAttribute="trailing" constant="12" id="J06-IM-JEs"/>
+                                                        <constraint firstItem="o2q-mc-1JW" firstAttribute="leading" secondItem="aaO-D2-nmk" secondAttribute="leadingMargin" constant="12" id="K1b-lv-mpz"/>
+                                                        <constraint firstItem="o2q-mc-1JW" firstAttribute="centerY" secondItem="aaO-D2-nmk" secondAttribute="centerY" id="R1K-6Q-SaX"/>
+                                                        <constraint firstItem="o2q-mc-1JW" firstAttribute="top" secondItem="aaO-D2-nmk" secondAttribute="top" constant="12" id="uDx-Mz-8d2"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="cityName" destination="o2q-mc-1JW" id="3kM-eG-tp0"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="BYZ-38-t0r" id="u1I-sl-NbX"/>
+                                            <outlet property="delegate" destination="BYZ-38-t0r" id="kE1-Wi-a9y"/>
+                                        </connections>
+                                    </tableView>
                                 </subviews>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="X8b-04-VAj" secondAttribute="bottom" id="2ay-0I-ta4"/>
                                     <constraint firstItem="iGu-FC-RFD" firstAttribute="leading" secondItem="lM8-83-5Pr" secondAttribute="leading" id="8fB-nu-p5f"/>
+                                    <constraint firstAttribute="trailing" secondItem="X8b-04-VAj" secondAttribute="trailing" id="Evp-c2-4yf"/>
+                                    <constraint firstItem="X8b-04-VAj" firstAttribute="leading" secondItem="lM8-83-5Pr" secondAttribute="leading" id="WJC-wM-iFu"/>
                                     <constraint firstItem="iGu-FC-RFD" firstAttribute="top" secondItem="lM8-83-5Pr" secondAttribute="top" id="bfb-oC-mgi"/>
                                     <constraint firstAttribute="trailing" secondItem="Z3I-0d-D86" secondAttribute="trailing" id="dJQ-zU-SY4"/>
                                     <constraint firstItem="CnR-YA-OjM" firstAttribute="leading" secondItem="lM8-83-5Pr" secondAttribute="leading" id="duN-VY-Bq4"/>
+                                    <constraint firstItem="X8b-04-VAj" firstAttribute="top" secondItem="iGu-FC-RFD" secondAttribute="bottom" id="ghv-o1-kEs"/>
                                     <constraint firstAttribute="bottom" secondItem="CnR-YA-OjM" secondAttribute="bottom" id="hBu-PV-222"/>
                                     <constraint firstItem="Z3I-0d-D86" firstAttribute="leading" secondItem="lM8-83-5Pr" secondAttribute="leading" id="kGG-ZO-J0F"/>
                                     <constraint firstAttribute="bottom" secondItem="Z3I-0d-D86" secondAttribute="bottom" id="o9j-A6-Zre"/>
@@ -134,11 +176,146 @@
                         <outlet property="addNewCityInstructionView" destination="Z3I-0d-D86" id="dJB-yS-5lg"/>
                         <outlet property="noFavouritesSearchBar" destination="iGu-FC-RFD" id="rCn-SQ-FJj"/>
                         <outlet property="noFavouritesSearchTableView" destination="CnR-YA-OjM" id="cMP-1z-Kyq"/>
+                        <outlet property="savedFavouritesTableView" destination="X8b-04-VAj" id="kmI-Gv-qAe"/>
+                        <segue destination="0q4-Yk-hPa" kind="show" identifier="showDetail" id="SFo-ac-EMa"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="989.85507246376824" y="138.61607142857142"/>
+        </scene>
+        <!--Detail View Controller-->
+        <scene sceneID="qpi-S0-eFX">
+            <objects>
+                <viewController id="0q4-Yk-hPa" customClass="DetailViewController" customModule="WindConditionsApp" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2o1-ny-WEF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;Date Label&gt;" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WfI-zf-LTV">
+                                <rect key="frame" x="12" y="56" width="296" height="27"/>
+                                <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="22"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="w3m-ru-g34">
+                                <rect key="frame" x="12" y="95" width="296" height="130"/>
+                                <subviews>
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="WindDirection" translatesAutoresizingMaskIntoConstraints="NO" id="fC4-Re-t3c">
+                                        <rect key="frame" x="98" y="0.0" width="100" height="100"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="100" id="eMi-V3-sy2"/>
+                                            <constraint firstAttribute="height" constant="100" id="f5W-t8-QDm"/>
+                                        </constraints>
+                                    </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;Wind Direction&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="txU-g2-bir">
+                                        <rect key="frame" x="68" y="108" width="160.5" height="22"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="4zK-iQ-M5w">
+                                <rect key="frame" x="0.0" y="225" width="320" height="343"/>
+                                <subviews>
+                                    <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="B8V-NG-qZ7">
+                                        <rect key="frame" x="0.0" y="0.0" width="320" height="306"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <prototypes>
+                                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="DailyForecastCell" rowHeight="140" id="goF-G1-3VL" customClass="DailyForecastTableViewCell" customModule="WindConditionsApp" customModuleProvider="target">
+                                                <rect key="frame" x="0.0" y="28" width="320" height="140"/>
+                                                <autoresizingMask key="autoresizingMask"/>
+                                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="goF-G1-3VL" id="Fgr-hO-guz">
+                                                    <rect key="frame" x="0.0" y="0.0" width="320" height="140"/>
+                                                    <autoresizingMask key="autoresizingMask"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;Date&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="290-CL-SiN">
+                                                            <rect key="frame" x="27" y="23" width="266" height="27"/>
+                                                            <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="22"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;Wind speed&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8YQ-QU-HxP">
+                                                            <rect key="frame" x="27" y="62" width="266" height="21"/>
+                                                            <fontDescription key="fontDescription" name="Montserrat-SemiBold" family="Montserrat" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="&lt;Wind deg&gt;" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zel-O5-ksG">
+                                                            <rect key="frame" x="27" y="95" width="266" height="20"/>
+                                                            <fontDescription key="fontDescription" name="Montserrat-Medium" family="Montserrat" pointSize="16"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                    <constraints>
+                                                        <constraint firstAttribute="trailingMargin" secondItem="Zel-O5-ksG" secondAttribute="trailing" constant="12" id="0jh-jB-ZHf"/>
+                                                        <constraint firstAttribute="trailingMargin" secondItem="290-CL-SiN" secondAttribute="trailing" constant="12" id="G5X-xQ-bNY"/>
+                                                        <constraint firstItem="290-CL-SiN" firstAttribute="leading" secondItem="Fgr-hO-guz" secondAttribute="leadingMargin" constant="12" id="IEC-cI-c7N"/>
+                                                        <constraint firstItem="Zel-O5-ksG" firstAttribute="top" secondItem="8YQ-QU-HxP" secondAttribute="bottom" constant="12" id="Knw-u6-uy5"/>
+                                                        <constraint firstItem="Zel-O5-ksG" firstAttribute="leading" secondItem="Fgr-hO-guz" secondAttribute="leadingMargin" constant="12" id="N6U-lo-8Vo"/>
+                                                        <constraint firstItem="290-CL-SiN" firstAttribute="top" secondItem="Fgr-hO-guz" secondAttribute="topMargin" constant="12" id="WFO-f5-qSN"/>
+                                                        <constraint firstItem="8YQ-QU-HxP" firstAttribute="top" secondItem="290-CL-SiN" secondAttribute="bottom" constant="12" id="XzF-hr-xl1"/>
+                                                        <constraint firstItem="8YQ-QU-HxP" firstAttribute="leading" secondItem="Fgr-hO-guz" secondAttribute="leadingMargin" constant="12" id="e34-6z-fLw"/>
+                                                        <constraint firstAttribute="trailingMargin" secondItem="8YQ-QU-HxP" secondAttribute="trailing" constant="12" id="gBb-Mu-KSQ"/>
+                                                    </constraints>
+                                                </tableViewCellContentView>
+                                                <connections>
+                                                    <outlet property="dateLabel" destination="290-CL-SiN" id="LNB-sk-ose"/>
+                                                    <outlet property="windDegreeLabel" destination="Zel-O5-ksG" id="r47-LN-SyZ"/>
+                                                    <outlet property="windSpeedLabel" destination="8YQ-QU-HxP" id="svg-kb-dew"/>
+                                                </connections>
+                                            </tableViewCell>
+                                        </prototypes>
+                                        <connections>
+                                            <outlet property="dataSource" destination="0q4-Yk-hPa" id="uaW-X1-vIX"/>
+                                            <outlet property="delegate" destination="0q4-Yk-hPa" id="KXy-o7-qZZ"/>
+                                        </connections>
+                                    </tableView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uwU-3a-ZyC">
+                                        <rect key="frame" x="58" y="306" width="204" height="37"/>
+                                        <fontDescription key="fontDescription" name="Montserrat-Bold" family="Montserrat" pointSize="20"/>
+                                        <state key="normal" title="&lt;Add to favourites&gt;"/>
+                                        <connections>
+                                            <action selector="pressedAddToFavourites" destination="0q4-Yk-hPa" eventType="touchUpInside" id="wjc-EF-hsI"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="uwU-3a-ZyC" firstAttribute="top" secondItem="B8V-NG-qZ7" secondAttribute="bottom" id="HQ7-Og-hLW"/>
+                                    <constraint firstAttribute="trailing" secondItem="B8V-NG-qZ7" secondAttribute="trailing" id="erC-YA-Js8"/>
+                                    <constraint firstItem="B8V-NG-qZ7" firstAttribute="leading" secondItem="4zK-iQ-M5w" secondAttribute="leading" id="pi7-ut-Bl6"/>
+                                    <constraint firstItem="B8V-NG-qZ7" firstAttribute="top" secondItem="4zK-iQ-M5w" secondAttribute="top" id="ygn-y4-t0A"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="4Cj-Ho-O4L" firstAttribute="trailing" secondItem="WfI-zf-LTV" secondAttribute="trailing" constant="12" id="0LR-gO-8BT"/>
+                            <constraint firstItem="4Cj-Ho-O4L" firstAttribute="trailing" secondItem="4zK-iQ-M5w" secondAttribute="trailing" id="5jq-aJ-6Ap"/>
+                            <constraint firstItem="w3m-ru-g34" firstAttribute="leading" secondItem="4Cj-Ho-O4L" secondAttribute="leading" constant="12" id="HOn-Iu-7p0"/>
+                            <constraint firstItem="WfI-zf-LTV" firstAttribute="leading" secondItem="4Cj-Ho-O4L" secondAttribute="leading" constant="12" id="HW2-Xg-Uo1"/>
+                            <constraint firstItem="4Cj-Ho-O4L" firstAttribute="trailing" secondItem="w3m-ru-g34" secondAttribute="trailing" constant="12" id="Lz6-Uu-iUL"/>
+                            <constraint firstItem="WfI-zf-LTV" firstAttribute="top" secondItem="4Cj-Ho-O4L" secondAttribute="top" constant="12" id="Mcj-YL-K9E"/>
+                            <constraint firstAttribute="bottom" secondItem="4zK-iQ-M5w" secondAttribute="bottom" id="Z0V-KK-BwB"/>
+                            <constraint firstItem="w3m-ru-g34" firstAttribute="top" secondItem="WfI-zf-LTV" secondAttribute="bottom" constant="12" id="knB-aO-d7f"/>
+                            <constraint firstItem="4zK-iQ-M5w" firstAttribute="leading" secondItem="2o1-ny-WEF" secondAttribute="leading" id="sU1-9R-dvE"/>
+                            <constraint firstItem="4zK-iQ-M5w" firstAttribute="top" secondItem="w3m-ru-g34" secondAttribute="bottom" id="u0l-jj-6vv"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="4Cj-Ho-O4L"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="qHi-A4-HjP"/>
+                    <connections>
+                        <outlet property="addToFavouritesButton" destination="uwU-3a-ZyC" id="0T8-AH-JP8"/>
+                        <outlet property="dateLabel" destination="WfI-zf-LTV" id="yI2-Va-84X"/>
+                        <outlet property="windDirectionImage" destination="fC4-Re-t3c" id="aCS-J0-pgm"/>
+                        <outlet property="windDirectionLabel" destination="txU-g2-bir" id="N7L-If-oaH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="cr9-zh-tJD" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1927.5" y="138.38028169014083"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="Sfy-R3-Ius">
@@ -146,7 +323,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Ae0-mP-3m7" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="ppU-iO-Wx6">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -159,4 +336,7 @@
             <point key="canvasLocation" x="79.710144927536234" y="138.61607142857142"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="WindDirection" width="512" height="512"/>
+    </resources>
 </document>

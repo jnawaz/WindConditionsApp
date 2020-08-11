@@ -14,6 +14,7 @@ class FavouriteLocationPresenter: NSObject {
     var managedObjectContext: NSManagedObjectContext?
     let filename = "citylist"
     let filetype = "json"
+    var isSearching = false
 
     init(viewDelegate: FavouriteLocationViewDelegate,
          managedObjectContext: NSManagedObjectContext) {
@@ -22,11 +23,14 @@ class FavouriteLocationPresenter: NSObject {
         self.managedObjectContext = managedObjectContext
     }
 
-    func viewDidLoad() {
+    func viewWillAppear() {
         if let coreDataContext = managedObjectContext {
             if City.hasStoredCities(with: coreDataContext) {
                 if FavouriteCities.hasStoredFavourites(with: coreDataContext) {
-                    self.viewDelegate?.showFavouritesView()
+                    let favourites = FavouriteCities.all(with: coreDataContext)
+                    if let favouriteCities = favourites {
+                        self.viewDelegate?.showFavouritesView(favCities: favouriteCities)
+                    }
                 } else {
                     self.viewDelegate?.hideEmptyFavouritesView()
                     self.viewDelegate?.showAddCityInstructionView()
@@ -36,6 +40,7 @@ class FavouriteLocationPresenter: NSObject {
                 self.viewDelegate?.showLoadingIndicator()
                 self.populateCityData()
                 self.viewDelegate?.hideLoadingIndicator()
+                self.viewDelegate?.showAddCityInstructionView()
             }
         }
     }
@@ -65,6 +70,22 @@ class FavouriteLocationPresenter: NSObject {
                     completionHandler(searchCityResult)
                 } else {
                     completionHandler(nil)
+                }
+            }
+        }
+    }
+
+    func configureViews() {
+        if let coreDataContext = self.managedObjectContext {
+            if let favourties = FavouriteCities.all(with: coreDataContext) {
+                if favourties.isEmpty {
+                    viewDelegate?.showAddCityInstructionView()
+                } else {
+                    if isSearching {
+                        viewDelegate?.showSearchResultsTable()
+                    } else {
+                        viewDelegate?.showFavouritesView()
+                    }
                 }
             }
         }
