@@ -6,5 +6,6 @@
 import Foundation
 
 protocol DetailViewDelegate: class {
-    /* Temporarily empty */
+    func successfullySaved()
+    func failedToSave()
 }

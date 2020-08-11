@@ -10,3 +10,19 @@
 "NoFavouritesAdded.Title" = "No favourites";
 "NoFavouritesAdded.Body" = "You haven't added any cities to track, use the search bar above to find and add cities to track";
 "NoFavouritesSearchBarPlaceHolder" = "Search for a city, e.g. London";
+
+// Alerts
+"APIError.Title" = "Ooops";
+
+// API Error Responses
+"CityDetailsResponse.Error" = "There was something wrong with the request.\nTry again shortly";
+
+// Buttons
+"AddToFavouritesButtonTitle" = "Add to favourites";
+
+// Errors
+"FavouriteSaveError.Title" = "Ooops";
+"FavouriteSaveError.Body" = "There was a problem saving your favourite city\nPlease try another";
+
+// Buttons
+"AddToFavouritesButtonTitle" = "Add to favourites";
