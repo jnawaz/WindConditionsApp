@@ -11,6 +11,7 @@ private struct ReferenceColors {
     static let lavender = UIColor("#E6EEF9")
     static let slateGrey = UIColor("#717892")
     static let darkGreen = UIColor("#010312")
+    static let white = UIColor("#ffffff")
 }
 
 struct Colors {
@@ -19,6 +20,9 @@ struct Colors {
     static let noFavouritesSearchBarTint = ReferenceColors.darkGreen
     static let darkText = ReferenceColors.darkGreen
     static let detailViewBackgroundColor = ReferenceColors.lavender
+    static let forecastBackground = ReferenceColors.white
+    static let forecastScrollViewBackground = ReferenceColors.darkGreen
+    static let favouritesTableBackgroundColor = ReferenceColors.lavender
 }
 
 extension UIColor {
